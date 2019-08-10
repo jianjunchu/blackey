@@ -1,0 +1,614 @@
+<resources>
+    <string name="app_name">Blackey</string>
+    <string name="bottom_return">返回</string>
+
+    <string name="bottom_restart">重新提交</string>
+
+    <string name="bottom_tab_market">交易</string>
+    <string name="bottom_tab_orders">订单</string>
+    <string name="bottom_tab_wallet">钱包</string>
+    <string name="bottom_tab_mine">我的</string>
+
+    <string name="title_market">购买门罗币</string>
+    <string name="title_wallet">我的钱包</string>
+    <string name="title_search">搜索</string>
+    <string name="publish">发布广告</string>
+    <string name="trust">信任管理</string>
+    <string name="advertising">广告管理</string>
+    <string name="register">注册</string>
+    <string name="hint_login_mobile">请输入手机号</string>
+    <string name="hint_login_password">请输入密码</string>
+    <string name="country">国家/地区</string>
+    <string name="hint_country">请选择国家/地区</string>
+    <string name="mobile_register">手机注册</string>
+    <string name="hint_set_login_password">请设置登录密码</string>
+    <string name="hint_login_captcha">请输入验证码</string>
+    <string name="get_captcha">获取验证码</string>
+    <string name="read_agree">已阅读并同意</string>
+    <string name="terms_service">《Blackey产品服务条款》</string>
+    <string name="next_step">下一步</string>
+    <string name="reset_password">重置密码</string>
+    <string name="hint_set_new_password">请输入新登录密码(6-16位数字、字母组合)</string>
+    <string name="hint_confirm_password">请再次输入密码</string>
+    <string name="invalid_username_password">用户名密码错误！</string>
+    <string name="choose_country">地区选择</string>
+    <string name="phone_number_is_exist">手机号已注册</string>
+    <string name="loading">正在加载，请稍候...</string>
+    <string name="hint_read_terms_service">您必须同意服务条款才可以继续</string>
+    <string name="registered_successfully">注册成功</string>
+
+
+    <string name="LoadMoreView_loadingHint">加载中...</string>
+    <string name="LoadMoreView_completeHint">查看更多</string>
+    <string name="LoadMoreView_errorHint">加载失败，点击重新加载</string>
+    <string name="LoadMoreView_noMoreHint">没有更多了~</string>
+    <string name="buy">购买</string>
+    <string name="deal">交易</string>
+    <string name="good_reputation">好评</string>
+    <string name="quota">限额</string>
+
+    <string name="processing">进行中</string>
+    <string name="finished">已完成</string>
+
+
+    <string name="order_status_unpaid">待付款</string>
+    <string name="order_status_prepaid">待确认</string>
+    <string name="order_status_complete">已完成</string>
+    <string name="order_status_cancel">已取消</string>
+    <string name="order_status_timeout">已超时</string>
+
+    <string name="order_type_sell">出售</string>
+    <string name="order_type_buy">购买</string>
+    <string name="transaction_amount">交易金额</string>
+    <string name="number_transaction">交易数量</string>
+    <string name="transaction_value">交易价格</string>
+    <string name="order_no">订单编号</string>
+    <string name="invite_friends">邀请好友</string>
+    <string name="hint_invite_friends">邀友得奖励</string>
+    <string name="certification">实名认证</string>
+    <string name="security_center">安全中心</string>
+    <string name="help_center">帮助中心</string>
+    <string name="about_us">关于我们</string>
+    <string name="setting">设置</string>
+    <string name="my_orders">我的订单</string>
+    <string name="my_account">我的账户</string>
+    <string name="certification_result">认证结果</string>
+    <string name="notification_setting">通知设置</string>
+    <string name="order_notification">订单通知</string>
+    <string name="chat_notification">聊天通知</string>
+    <string name="language">语言</string>
+    <string name="simplified_chinese">简体中文</string>
+    <string name="logout">退出登录</string>
+    <string name="hint_certification">为保障您的交易安全，请完成实名认证。通过认证后，您可以获得更高的交易额度</string>
+    <string name="hint_select_document_type">选择证件类型</string>
+    <string name="start_certification">开始认证</string>
+    <string name="identity_card">身份证</string>
+    <string name="passport">护照</string>
+    <string name="driving_licence">驾驶证</string>
+    <string name="have_new_version">有新版本可用</string>
+    <string name="i_sell">我出售的</string>
+    <string name="i_buy">我购买的</string>
+    <string name="hint_form_market">*每次挂单和撤单都要花费 %1$s 个门罗币转账费用\n*每笔完成的交易需要缴纳%2$s的交易手续费</string>
+    <string name="currency_type">货&#12288;&#12288;币</string>
+    <string name="hint_premium">溢价设置(市场参考价格350.99CNY/XMR)</string>
+    <string name="premium">溢&#12288;&#12288;价</string>
+    <string name="trading_value">出售价格</string>
+    <string name="totalsold">出售数量</string>
+    <string name="minimum">最&#8194;小&#8194;量</string>
+    <string name="payment_term">付款方式</string>
+    <string name="hint_payment_term">请选择付款方式</string>
+    <string name="collection_term">收款账户</string>
+    <string name="hint_collection_term">请选择收款账户</string>
+    <string name="market_explain">请说明您有关交易的相关要求，以便买家下单前先行查看</string>
+    <string name="anytime">任何时候</string>
+    <string name="custom">自定义</string>
+    <string name="every_sunday">每周日</string>
+    <string name="every_monday">每周一</string>
+    <string name="every_tuesday">每周二</string>
+    <string name="every_wednesday">每周三</string>
+    <string name="every_thursday">每周四</string>
+    <string name="every_friday">每周五</string>
+    <string name="every_saturday">每周六</string>
+    <string name="underway">进行中</string>
+    <string name="sold_out">已下架</string>
+    <string name="my_ads">我的广告</string>
+    <string name="mein_vertrauen">我信任的</string>
+    <string name="trust_me">信任我的</string>
+    <string name="confirm">确认</string>
+    <string name="create_new_wallet">新建钱包</string>
+    <string name="restore_wallet">从密钥卡恢复钱包</string>
+    <string name="hint_wallet_name">钱包名称</string>
+    <string name="hint_wallet_passwd">钱包密码</string>
+
+    <string name="message_strorage_not_writable">外部储存空间无法写入</string>
+    <string name="no_write_external_storage">请在系统权限管理设置中开启存储权限</string>
+
+    <string name="message_strorage_not_permitted">我们真的很需要你的外部储存空间权限！</string>
+    <string name="message_camera_not_permitted">沒有相机 = 无法扫描QR码!</string>
+
+
+    <string name="progress_nfc_write">Writing Tag</string>
+    <string name="nfc_write_failed">Writing Tag failed!</string>
+    <string name="nfc_write_successful">Writing Tag successful</string>
+    <string name="nfc_tag_unsupported">Tag does not support NDEF!</string>
+    <string name="nfc_tag_size">Tag provides %1$d bytes, but we need %2$d!</string>
+    <string name="nfc_tag_read_undef">I don\'t understand the Tag!</string>
+    <string name="nfc_tag_read_what">I don\'t know what you want!</string>
+    <string name="nfc_tag_read_success">Reading Tag successful</string>
+    <string name="nfc_tag_tap">NFC Available!</string>
+
+    <string name="service_description">服务</string>
+    <string name="account_type">账户类型</string>
+    <string name="bank_name">银行名称</string>
+    <string name="opening_bank">开&#8194;户&#8194;行</string>
+    <string name="account_name">户&#12288;&#12288;名</string>
+    <string name="account_no">账&#12288;&#12288;号</string>
+    <string name="for_payment">用来购买付款</string>
+    <string name="for_receiving">用来出售收款</string>
+    <string name="hint_account_information">请填写账户信息</string>
+    <string name="hint_opening_bank">请填写分行名称</string>
+    <string name="hint_account_name">请填写开户名</string>
+    <string name="hint_account_no">请填写账号</string>
+    <string name="hint_bank_name">请选择银行</string>
+    <string name="choose_bank">选择银行</string>
+    <string name="hint_account_type">请选择账户类型</string>
+    <string name="add_account">添加账户</string>
+    <string name="error_invalid_username">用户名密码错误</string>
+    <string name="register_or_login">登录/登录</string>
+    <string name="login_prompt">立刻登录可以查看更多内容</string>
+    <string name="captcha_error">验证码错误</string>
+    <string name="send_captcha_success">发送验证码成功，请留意短信</string>
+    <string name="number_trades">交易 %1$s | 好评：%2$s</string>
+    <string name="logout_success">您已退出登录</string>
+    <string name="unauthorized">操作未授权,未登录或登录已失效</string>
+    <string name="forbidden">请求被拒绝</string>
+    <string name="not_found">请求资源不存在</string>
+    <string name="request_timeout">服务器执行超时</string>
+    <string name="internal_server_error">服务器内部错误</string>
+    <string name="service_unavailable">服务器不可用</string>
+    <string name="http_error_default">网络链接错误</string>
+    <string name="parse_error">解析错误</string>
+    <string name="netword_error">网络连接失败</string>
+    <string name="ssl_error">证书验证失败</string>
+    <string name="timeout_error">网络连接超时</string>
+    <string name="error_unknown">未知错误</string>
+    <string name="choose_currency">选择货币类型</string>
+    <string name="buy_xmr">购买 XMR</string>
+    <string name="contact">联系对方</string>
+    <string name="unit_price">单价</string>
+    <string name="seller_message">商家留言:</string>
+    <string name="how_much_to_buy">您想购买多少?</string>
+    <string name="hint_purchase_amount">请输入购买金额</string>
+    <string name="hint_purchase_quantity">请输入购买数量</string>
+    <string name="buy_now">立即购买</string>
+    <string name="trading_remind">交易提醒</string>
+    <string name="hint_trading_remind">1.交易前请详细了解卖家的交易信息\n2.请通过平台进行沟通约定,并保存好相关聊天记录\n如果遇到交易纠纷,请通过平台"帮助"解决问题</string>
+    <string name="help">帮助</string>
+    <string name="order_confirm">订单确认</string>
+    <string name="cancel">取消</string>
+    <string name="buying_price">购买价格</string>
+    <string name="purchase_quantity">购买数量</string>
+    <string name="payment_amount">支付金额</string>
+    <string name="order_confirm_warn">提醒:请确认价格再下单,此交易数量都门罗币已经在平台锁定,请放心购买.</string>
+
+    <string name="label_wallet_advanced_details">点选以获得详细资讯</string>
+
+
+
+    <string name="receive_desc_hint">Description (optional)</string>
+
+    <string name="progress_ledger_progress">Communicating with Ledger</string>
+    <string name="progress_ledger_confirm">Confirmation on Ledger required!</string>
+    <string name="progress_ledger_lookahead">Retrieving subaddresses</string>
+    <string name="progress_ledger_verify">Verifying keys</string>
+    <string name="progress_ledger_opentx">Doing crazy maths</string>
+    <string name="progress_ledger_mlsag">Hashing stuff</string>
+
+
+    <string name="changepw_progress">更改密码中</string>
+
+    <string name="backup_success">备份成功</string>
+    <string name="backup_failed">备份失败!</string>
+    <string name="archive_failed">封存失败!</string>
+    <string name="rename_failed">重新命名失败!</string>
+    <string name="changepw_failed">密码更改失败!</string>
+    <string name="changepw_success">密码更改成功</string>
+
+    <string name="generate_password_hint">钱包密码</string>
+    <string name="generate_fingerprint_hint">允许使用指纹开启钱包</string>
+    <string name="generate_fingerprint_warn"><![CDATA[
+        <strong>指纹验证</strong>
+        <p>启用指纹验证后，无需输入密码，就可以查看钱包余额并接收资金。</p>
+        <p>但为安全起见，查看钱包详细资讯或发送资金时，仍须输入密码。</p>
+        <strong>安全警告</strong>
+        <p>最后，blackey 提醒您，任何可以取得您指紋的人，都能够窥视您的钱包余额。</p>
+        <p>例如，您身边的恶意使用者可以趁您睡着时使用您的指纹开启钱包。</p>
+        <strong>您确定要启用本功能吗？</strong>
+    ]]></string>
+
+    <string name="generate_bad_passwordB">密码不符</string>
+    <string name="generate_empty_passwordB">密码不得空白</string>
+    <string name="generate_wallet_name">取个名字吧</string>
+    <string name="generate_wallet_dot">不能使用.开头</string>
+    <string name="generate_wallet_exists">名称已存在</string>
+    <string name="generate_address_label">公开地址</string>
+    <string name="generate_mnemonic_label">记忆种子码</string>
+    <string name="generate_crazypass_label">钱包文件恢复密码</string>
+    <string name="generate_button_accept">我已抄写以上资讯</string>
+    <string name="generate_wallet_creating">建立钱包</string>
+
+    <string name="generate_mnemonic_hint">25字记忆种子码</string>
+    <string name="generate_restoreheight_hint">从区块高度或日期(YYYY-MM-DD)恢复</string>
+    <string name="generate_viewkey_label">查看密钥</string>
+    <string name="generate_spendkey_label">花费密钥</string>
+    <string name="generate_address_label_sub">附属公开地址 #%1$d</string>
+
+    <string name="generate_wallet_type_key">密钥</string>
+    <string name="generate_wallet_type_new">新增</string>
+    <string name="generate_wallet_type_seed">种子码</string>
+    <string name="generate_wallet_type_view">查看</string>
+
+    <string name="label_copy_viewkey">查看密钥</string>
+    <string name="label_copy_address">公开地址</string>
+    <string name="label_copy_xmrtokey">XMR.TO 密钥</string>
+    <string name="message_copy_viewkey">查看密钥已复制至剪贴簿！</string>
+    <string name="message_copy_xmrtokey">XMR.TO 密钥已复制至剪贴簿！</string>
+    <string name="message_copy_address">钱包地址已复制至剪贴簿！</string>
+    <string name="message_copy_txid">交易ID 已复制至剪贴簿！</string>
+    <string name="message_nocopy">因安全性因素已停用复制功能！</string>
+
+    <string name="message_exchange_failed">无法取得汇率！\n使用 XMR/XMR 或重试</string>
+
+
+
+    <string name="menu_info">详细信息!</string>
+    <string name="menu_streetmode">Street Mode</string>
+    <string name="menu_receive">接收</string>
+    <string name="menu_rename">重新命名 &#8230;</string>
+    <string name="menu_archive">归档</string>
+
+    <string name="bad_fingerprint">无法识别指纹，请再试一次。</string>
+    <string name="bad_password">密码错误！</string>
+    <string name="bad_saved_password">[Saved password is incorrect.\nPlease enter password manually.]</string>
+    <string name="bad_wallet">钱包不存在!</string>
+    <string name="label_ok">好的</string>
+    <string name="label_cancel">取消</string>
+    <string name="label_close">关闭</string>
+
+    <string name="details_alert_message">将会选示敏感信息。\n请注意周遭安全!</string>
+    <string name="details_alert_yes">我现在很安全</string>
+    <string name="details_alert_no">不看了！</string>
+    <string name="details_title">详细信息</string>
+
+    <string name="prompt_rename">重命名 %1$s</string>
+
+    <string name="prompt_changepw">为 %1$s 设定新密码</string>
+    <string name="prompt_changepwB">重复输入 %1$s 的密码</string>
+    <string name="prompt_password">%1$s 的密码</string>
+    <string name="prompt_fingerprint_auth">你也可以使用指纹来开启钱包。\n请轻触你的指纹感应器。</string>
+    <string name="prompt_send_password">确认密码</string>
+    <string name="prompt_open_wallet">[Opening the wallet&#8230;]</string>
+
+    <string name="service_busy">正在处理前一个钱包 &#8230;</string>
+    <string name="label_receive_info_gen_qr_code">显示QR码</string>
+
+    <string name="receive_paymentid_hint">交易-ID (可选)</string>
+    <string name="receive_amount_hint">数量</string>
+    <string name="receive_cannot_open">不能打开钱包!</string>
+    <string name="receive_paymentid_invalid">16 或 64 Hex 字元(0&#8211;9,a&#8211;f)</string>
+    <string name="receive_integrated_paymentid_invalid">使用整合地址时必须为空白</string>
+
+
+    <string name="receive_amount_too_big">最大数量. %1$s</string>
+    <string name="receive_amount_negative">最小数量. 0</string>
+    <string name="receive_amount_nan">不是数字</string>
+    <string name="opening_hours">开放时间</string>
+    <string name="wallet_activity_name">钱包</string>
+    <string name="status_wallet_disconnected">断开连接</string>
+
+    <string name="label_wallet_receive">收币</string>
+    <string name="label_wallet_send">发币</string>
+    <string name="open_progress">检查守护节点</string>
+
+
+    <string name="status_wallet_loading">加载钱包 &#8230;</string>
+    <string name="status_wallet_unloaded">钱包保存成功</string>
+    <string name="status_wallet_unload_failed">钱包保存失败!</string>
+    <string name="status_wallet_connecting">正在连接 &#8230;</string>
+    <string name="status_wallet_connect_failed">节点连接失败!\n请检查用户名/密码</string>
+    <string name="status_wallet_connect_timeout">节点连接超时!\n稍后再试.</string>
+    <string name="status_wallet_node_invalid">无效节点!\n请连接其他节点.</string>
+    <string name="status_wallet_connect_ioex">节点无法访问!\n请连接其他节点.</string>
+    <string name="status_wallet_connect_wrongversion">与节点版本不兼容 - 请升级!</string>
+
+    <string name="xmr_unconfirmed_amount">+ %1$s XMR 未确认</string>
+
+    <string name="status_synced">已同步区块：</string>
+    <string name="status_remaining">剩余区块</string>
+    <string name="status_syncing">扫描中：</string>
+
+    <string name="xmrto_error_001">XMR.TO offline - try again later</string>
+    <string name="xmrto_error_004">BTC amount out of bounds</string>
+    <string name="xmrto_error_010">Invalid or outdated Payment URL</string>
+    <string name="xmrto_error_012">Too many requests</string>
+    <string name="xmrto_error" translatable="false">XMR.TO Service Error</string>
+
+    <string name="open_wallet_ledger_missing">Please (re)connect Ledger device</string>
+
+    <string name="accounts_balance" translatable="false">%1$s XMR</string>
+
+    <string name="label_watchonly">(只读)</string>
+    <string name="label_send_success">发送成功</string>
+    <string name="label_send_done">完成</string>
+    <string name="label_send_progress_queryparms">正在查询 XMR.TO 参数</string>
+
+    <string name="label_generic_xmrto_error">XMR.TO 发生错误</string>
+    <string name="text_generic_xmrto_error">错误代码: %1$d</string>
+
+    <string name="text_retry">点选以重试</string>
+    <string name="text_noretry_monero">我们卡住了!</string>
+    <string name="text_noretry">不好, XMR.TO 现在似乎无法提供服务!</string>
+
+    <string name="tx_list_fee">- 手续费 %1$s</string>
+    <string name="tx_list_amount_failed">(%1$s)</string>
+    <string name="tx_list_failed_text">失败</string>
+    <string name="tx_list_amount_negative">- %1$s</string>
+    <string name="tx_list_amount_positive">+ %1$s</string>
+    <string name="tx_subaddress">子地址 #%1$d</string>
+
+
+    <string name="tx_timestamp">时间戳记</string>
+    <string name="tx_id">交易ID (TXID)</string>
+    <string name="tx_key">TX密钥 (TX Key)</string>
+    <string name="tx_destination">收款地址</string>
+    <string name="tx_destination_btc">收款地址\n(BTC)</string>
+    <string name="tx_paymentId">付款ID</string>
+    <string name="tx_blockheight">区块</string>
+    <string name="tx_amount">金额</string>
+    <string name="tx_amount_btc">金额\n(BTC)</string>
+    <string name="tx_fee">手续费</string>
+    <string name="tx_transfers">转账</string>
+    <string name="tx_notes">附注</string>
+    <string name="tx_notes_hint">(选填)</string>
+    <string name="tx_button_notes">储存</string>
+    <string name="tx_notes_set_failed">附注储存失败</string>
+    <string name="tx_title">交易明細</string>
+
+    <string name="tx_pending">等待确认中</string>
+    <string name="tx_failed">失败</string>
+    <string name="tx_account">户口 #</string>
+    <string name="tx_account_formatted" translatable="false">(%1$d, %2$d)</string>
+
+    <string name="send_amount_btc_xmr">%1$s (参考价)</string>
+
+    <string name="send_paymentid_hint">付款ID (选填)</string>
+    <string name="send_amount_hint">0.00</string>
+    <string name="send_notes_hint">注记 (选填)</string>
+    <string name="send_generate_paymentid_hint">产生</string>
+    <string name="send_send_label">发送我的 Monero</string>
+    <string name="send_send_timed_label">发送我的 Monero (%1$s)</string>
+    <string name="send_qr_invalid">这不是QR码</string>
+    <string name="send_qr_address_invalid">这不是有效的付款QR码</string>
+    <string name="send_address_invalid">这不是有效的地址</string>
+    <string name="send_title">发送</string>
+    <string name="send_available">余额: %1$s XMR</string>
+    <string name="send_address_title">地址</string>
+    <string name="send_amount_title">金额</string>
+    <string name="send_confirm_title">确认</string>
+    <string name="send_success_title">完成</string>
+
+    <string name="send_amount_label">金额</string>
+    <string name="send_fee_btc_label">手续费 (XMR)</string>
+    <string name="send_fee_label">手续费</string>
+    <string name="send_total_btc_label">总计 (XMR)</string>
+    <string name="send_total_label">总计</string>
+
+    <string name="send_amount">%1$s XMR</string>
+    <string name="send_fee">+%1$s 手续费</string>
+
+    <string name="send_create_tx_error_title">建立交易错误</string>
+
+    <string name="send_address_not_openalias">OpenAlias address not available</string>
+    <string name="send_address_openalias">OpenAlias secure &#x2714;</string>
+    <string name="send_address_resolve_openalias">Resolving OpenAlias&#8230;</string>
+    <string name="send_address_no_dnssec">OpenAlias without DNSSEC - address may be spoofed</string>
+
+    <string name="send_address_resolve_bip70">Resolving Payment URI&#8230;</string>
+    <string name="send_address_not_bip70">Could not resolve Payment URI</string>
+    <string name="send_address_bip70">Resolved Payment URI &#x2714;</string>
+    <string name="send_address_hint">Receiver</string>
+
+    <string name="send_sweepall">发送这个户口的所有已确认款项！</string>
+    <string name="send_qr_hint" translatable="false">扫一扫</string>
+    <string name="send_available_btc">余额： %2$s BTC (%1$s XMR)</string>
+    <string name="send_xmrto_timeout">等待时间过长!</string>
+
+
+    <string name="info_paymentid_intergrated">已加入付款ID</string>
+    <string name="info_prepare_tx">正在准备你的交易</string>
+    <string name="info_send_xmrto_query">查询中 &#8230;</string>
+    <string name="info_send_xmrto_success_order_label">XMR.TO 订单</string>
+    <string name="info_xmrto"><![CDATA[
+        <b>你输入了Bitcoin地址</b><br/>
+        <i>你将会发送XMR而收款方将会收到BTC(由 <b>XMR.TO</b> 提供转換)</i>
+    ]]></string>
+
+    <string name="info_send_xmrto_parms"><![CDATA[
+        <b>你可发送 %1$s &#8212; %2$s BTC</b>.<br/>
+        <i><b>XMR.TO</b>提供的<u>即时</u>汇率为<b>%3$s BTC</b></i>.
+    ]]></string>
+    <string name="info_send_xmrto_zeroconf"><![CDATA[
+        <i>金额少于<b>%1$s BTC</b>，将可以<u>马上</u>发送!</i>
+    ]]></string>
+
+    <string name="text_send_btc_amount">%1$s BTC = %2$s XMR</string>
+    <string name="text_send_btc_rate">(汇率: %1$s BTC/XMR)</string>
+
+
+    <string name="status_transaction_failed">交易失败: %1$s</string>
+
+    <string name="unknown_amount" translatable="false">\?\?\?</string>
+
+
+    <string name="label_send_btc_xmrto_info">参访 xmr.to 以获得支援及追踪交易</string>
+    <string name="label_send_btc_xmrto_key_lb">私钥\nXMR.TO</string>
+    <string name="label_send_btc_xmrto_key">XMR.TO 私钥</string>
+    <string name="label_send_btc_address">目的地 BTC 地址</string>
+    <string name="label_send_btc_amount">金额</string>
+
+
+    <string name="label_send_progress_xmrto_create">建立 XMR.TO 订单</string>
+    <string name="label_send_progress_xmrto_query">查询 XMR.TO 订单</string>
+    <string name="label_send_progress_create_tx">正在准备 Monero 交易</string>
+
+    <string name="label_send_txid">交易ID</string>
+    <string name="label_send_address">收款地址</string>
+    <string name="label_send_payment_id">付款ID</string>
+    <string name="label_send_notes">附注</string>
+
+    <string name="street_sweep_amount">EVERYTHING!</string>
+    <string name="hint_offer_order">当前报价大概排在第%1$d位</string>
+    <string name="hint_min_limit">请输入每笔交易的最小限额</string>
+    <string name="hint_total_inventory">请输入出售数量</string>
+    <string name="hint_unit_price">请输入出售单价</string>
+    <string name="hint_select_currency">请选择货币类型</string>
+    <string name="choose_payment_mode">选择支付方式</string>
+    <string name="gross_amount">总金额</string>
+    <string name="minimum_quantity">单笔交易最小数量</string>
+
+    <string name="sell_confirm">出售确认</string>
+    <string name="minimum_amount">单笔交易最小金额</string>
+    <string name="sell_confirm_warn">提醒:请确认数量后再下单，此交易数量的币将从钱包转移到平台账户。因为有确认延迟，提交后几分钟，该出售才会发布到交易市场。</string>
+    <string name="select_wallet">选择钱包</string>
+    <string name="error_select_time">结束时间必须大于开始时间</string>
+    <string name="no_more_data">没有更多了</string>
+    <string name="trading_limits">交易限额</string>
+    <string name="gathering_wallet">收款钱包</string>
+
+
+    <string name="ordrt_seller">卖家</string>
+    <string name="order_contact_number">联系电话</string>
+    <string name="order_obligation">待转账金额</string>
+    <string name="order_commission_fee">手续费率</string>
+    <string name="order_get_quantity">到账数量</string>
+    <string name="order_create_time">下单时间</string>
+    <string name="cancel_order">取消订单</string>
+    <string name="order_info">订单详情</string>
+
+    <string name="create_order_succeed">下单成功,请联系卖家并付款</string> <!-- as in: "everything in the account" = "all the money" -->
+    <string name="order_trading_remind">卖家已开启实名认证,请确保付款于实名一致.</string>
+    <string name="buy_order">购买订单(%1$s)</string>
+    <string name="sell_order">出售订单(%1$s)</string>
+
+    <string name="mark_payment">标记已付款</string>
+    <string name="mark_receipt">标记已收款</string>
+    <string name="upload_card_img">请上传您的证件照片</string>
+
+
+    <string name="front_of_id_card">%1$s正面</string>
+    <string name="back_of_id_card">手持%1$s</string>
+    <string name="photo_requirements">照片要求</string>
+    <string name="hint_first_name">请输入您的姓</string>
+    <string name="hint_last_name">请输入您的名字</string>
+    <string name="hint_birth_day">请选择出生日期</string>
+    <string name="id_card_standard">标准</string>
+    <string name="id_card_lose">边框缺失</string>
+    <string name="id_card_fuzzy">照片模糊</string>
+    <string name="id_card_flicker">闪光强烈</string>
+    <string name="no_permission_camera">请在系统设置-权限管理中打开相机权限</string>
+    <string name="hint_identity_number">请输入证件号码</string>
+
+    <string name="passed_check_pending">正在人工审核,请稍等</string>
+    <string name="passed_failed">审核未通过,请重新提交</string>
+    <string name="passed_approve">审核通过</string>
+    <string name="count_order">订单数量</string>
+    <string name="action_sold_out">下架</string>
+    <string name="delete">删除</string>
+    <string name="delete_confirmation">删除确认</string>
+    <string name="hint_delete_ad">您确定要删除该广告?</string>
+    <string name="revocation_confirmation">撤单提示</string>
+    <string name="hint_revocation_ad">您确定要下架该广告?</string>
+    <string name="real_name">真实姓名</string>
+    <string name="successfully_added">提交成功</string>
+    <string name="edit">编辑</string>
+    <string name="hint_delete_account">您确认要删除该账户?</string>
+    <string name="edit_account">编辑账户</string>
+    <string name="inventory">库存</string>
+    <string name="list_minimum_buy_quantity">购买金额: </string>
+    <string name="list_total_buy_quantity">总额</string>
+    <string name="go_buy">去购买</string>
+    <string name="experience_immediately">立即体验</string>
+    <string name="text_select">选择</string>
+    <string name="menu_backup_to_nfc">备份到密钥卡</string>
+    <string name="menu_delete">删除</string>
+    <string name="generate_check_mnemonic">输入你的25字种子码</string>
+    <string name="restore_25_wallet">从种子恢复钱包</string>
+    <string name="input_nfc_password_title">输入卡片PIN码后，将卡片放置在手机的NFC读写区</string>
+
+    <string name="password_weak">Continue typing &#8230;</string>
+    <string name="password_fair">Meh &#8230;</string>
+    <string name="password_good">C\'mon, you can do better!</string>
+    <string name="password_strong">Getting there &#8230;</string>
+    <string name="password_very_strong">Yeah baby, h4x0r style!</string>
+    <string name="nfc_backup_recovery_password" />
+    <string name="backup_seed">是否备份助记词</string>
+    <string name="advertise_create_success">广告发布成功,请等待后台确认!</string>
+    <string name="title_confirm_payment">确认付款</string>
+    <string name="title_confirm_receipt">收款确认</string>
+    <string name="nfc_invalid">数据格式不正确</string>
+    <string name="backup_to_nfc_auth_failed">备份验证失败</string>
+    <string name="backup_to_nfc_write_failed">写入失败,备份中请不要移动卡片</string>
+    <string name="backup_to_nfc_config_access_failed">配置访问区失败,备份中请不要移动卡片</string>
+    <string name="read_address_failed">读取地址失败,读取中请不要移动卡片</string>
+    <string name="read_key_failed">读取支付密钥失败,读取中请不要移动卡片</string>
+    <string name="restore_from_nfc_auth_failed">PIN码输入错误</string>
+    <string name="reset_nfc_password">修改密钥卡PIN码</string>
+    <string name="hint_original_password">请输入原PIN!</string>
+    <string name="hint_password">请输入新PIN!</string>
+    <string name="slot_nfc_card">将密钥卡靠近手机NFC区域</string>
+    <string name="hint_passwords_differ">两次输入的PIN码不一致</string>
+    <string name="error_original_password">原PIN错误!</string>
+    <string name="write_new_key_failed">设置新PIN失败,请勿移动卡片</string>
+    <string name="write_new_key_success">设置新PIN成功</string>
+    <string name="init_node_error">无有效节点,请稍候重试.</string>
+
+    <string name="archive_alert_message">钱包档案案将会被备份并且于列表中刪除!</string>
+    <string name="archive_alert_yes">好的！</string>
+    <string name="archive_alert_no">不了！</string>
+    <string name="total_quantity">总出售数量</string>
+    <string name="minimum_order_quantity">最小交易数量</string>
+    <string name="help_address">Blk134, Jurong Gateway Road, #02-309A, Singapore 600134</string>
+    <string name="help_phone">+(65)86991798</string>
+    <string name="error_processing_previous">系统正在处理上一个订单,请稍候再试.</string>
+    <string name="success">已完成</string>
+    <string name="title_confirm_cancel">您确定要取消该订单?</string>
+    <string name="order_buyer">买家</string>
+    <string name="message_copy_account_no">账户已复制至剪贴簿！</string>
+
+    <string-array name="currency" translatable="false">
+        <item>XMR</item>
+        <item>CNY</item>
+        <item>USD</item>
+        <item>SGD</item>
+        <item>JPY</item>
+        <item>IDR</item>
+        <item>KDW</item>
+        <item>MYR</item>
+        <item>PHP</item>
+        <item>HKD</item>
+    </string-array>
+    <string name="message_copy_account_name">户名已复制至剪贴簿</string>
+    <string name="text_seller_mind">1. 请在确认收到  %1$s 后，再进行收款确认。 \n2. 如果未收到交易金额而点击了收款确认，订单数量的门罗币将释放给买家，您将承担由此产生的损失。</string>
+    <string name="not_sufficient_funds">余额不足</string>
+    <string name="amount_to_be_collected">待收款金额</string>
+    <string name="error_more_than">购买数量不能超过出售总数量!</string>
+    <string name="hint_complaint_content">请输入投诉的内容</string>
+    <string name="label_contact">联系方式</string>
+    <string name="label_captions">上传图片</string>
+    <string name="button_making_complaints">我要投诉</string>
+    <string name="title_complain">投诉</string>
+    <string name="submit">提交</string>
+    <string name="message_complain_success">提交投诉成功,我们的客服将会联系您!</string>
+    <string name="current_price" >门罗币当前价格</string>
+    <string name="more">更多</string>
+</resources>

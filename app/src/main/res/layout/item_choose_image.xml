@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="org.blackey.ui.choose.img.ChooseImageListItemViewModel" />
+
+        <variable
+            name="viewModel"
+            type="org.blackey.ui.choose.img.ChooseImageListItemViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+
+
+        <ImageView
+            android:scaleType="fitXY"
+            android:layout_margin="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            binding:url="@{viewModel.url}"
+            binding:onClickCommand="@{viewModel.itemClick}"
+            android:src="@mipmap/ic_choose_image" />
+
+        <ImageView
+            binding:onClickCommand="@{viewModel.deleteClick}"
+            android:visibility="@{viewModel.deleteVisibility}"
+            android:layout_alignParentRight="true"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            binding:srcCompat="@mipmap/ic_delete" />
+    </RelativeLayout>
+
+
+</layout>
+

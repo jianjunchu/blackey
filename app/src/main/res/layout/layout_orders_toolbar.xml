@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="toolbarViewModel"
+            type="org.blackey.ui.orders.toolbar.OrdersToolbarViewModel" />
+    </data>
+
+    <android.support.v7.widget.Toolbar
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/colorPrimary"
+        binding:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.sinothk.switchTabView.style1.segement.SegmentView
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:id="@+id/sv_segement0"
+                android:layout_width="160dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                app:lib_ui_view_segementv_borderWidth="1dp"
+
+                app:lib_ui_view_segementv_colorMain="#FFF"
+                app:lib_ui_view_segementv_colorSub="@color/colorPrimary"
+                app:lib_ui_view_segementv_divideWidth="1dp"
+                app:lib_ui_view_segementv_radius="4dp"
+                app:lib_ui_view_segementv_textSize="16dp" />
+
+            <View
+                style="@style/ViewLineStyle"
+                android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+</layout>
+

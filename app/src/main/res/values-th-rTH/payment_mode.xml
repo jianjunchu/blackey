@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="CASH">现金</string>
+    <string name="BANKACCOUNT">银行卡</string>
+    <string name="WECHAT">微信</string>
+    <string name="ALIPAY">支付宝</string>
+    <string name="PAYPAL">PayPal</string>
+    <string name="PAYNOW">PayNow</string>
+    <string name="GRABPAY">GrabPay</string>
+    <string name="PAYLAH">PayLah</string>
+</resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ICBK">INDUSTRIAL AND COMMERCIAL BANK OF CHINA</string>
+    <string name="ABOC">AGRICULTURAL BANK OF CHINA</string>
+    <string name="BKCH">BANK OF CHINA</string>
+    <string name="PCBC">CHINA CONSTRUCTION BANK CORPORATION</string>
+    <string name="COMM">BANK OF COMMUNICATIONS</string>
+    <string name="CMBC">CHINA MERCHANTS BANK</string>
+    <string name="MSBC">CHINA MINSHENG BANKING CORPORATION, LIMITED</string>
+    <string name="SPDB">SHANGHAI PUDONG DEVELOPMENT BANK</string>
+    <string name="BJCN">BANK OF BEIJING</string>
+    <string name="SZDB">PING AN BANK CO., LTD.</string>
+    <string name="CIBK">CHINA CITIC BANK</string>
+    <string name="HXBK">HUA XIA BANK</string>
+    <string name="ABNA">ABN AMRO BANK N.V. </string>
+    <string name="ANZB">AUSTRALIA AND NEW ZEALAND BANKING GROUP LIMITED</string>
+    <string name="BBVA">BANCO BILBAO VIZCAYA ARGENTARIA </string>
+    <string name="BOFA">BANK OF AMERICA</string>
+    <string name="BKID">BANK OF INDIA</string>
+    <string name="BOFM">BANK OF MONTREAL</string>
+    <string name="BKTW">BANK OF TAIWAN</string>
+    <string name="BOTK">BANK OF TOKYO-MITSUBISHI UFJ</string>
+    <string name="BNPA">BNP PARIBAS</string>
+    <string name="CITI">CITIBANK,N.A.</string>
+    <string name="CSFB">CREDIT SUISSE </string>
+    <string name="DBSS">DBS BANK LTD.</string>
+    <string name="DEUT">DEUTSCHE BANK AG</string>
+    <string name="CHAS">JPMORGAN CHASE BANK, N.A.</string>
+    <string name="OCBC">OVERSEA-CHINESE BANKING CORPORATION LIMITED</string>
+    <string name="ROYC">ROYAL BANK OF CANADA</string>
+    <string name="RBOS">ROYAL BANK OF SCOTLAND PLC</string>
+    <string name="SCBL">STANDARD CHARTERED BANK</string>
+    <string name="HSBC">THE HONGKONG AND SHANGHAI BANKING CORPORATION LIMITED</string>
+    <string name="UOVB">UNITED OVERSEAS BANK LIMITED</string>
+    <string name="WPAC">WESTPAC BANKING CORPORATION</string>
+    <string name="MBBE">MALAYAN BANKING BERHAD (MAYBANK)</string>
+    <string name="BMRI">BANK MANDIRI (PERSERO), PT</string>
+    <string name="BNIN">BANK NEGARA INDONESIA - PT (PERSERO)</string>
+    <string name="CIBB">CIMB BANK BERHAD</string>
+    <string name="HLBB">HONG LEONG BANK BERHAD</string>
+    <string name="BRIN">PT. BANK RAKYAT INDONESIA (PERSERO), TBK</string>
+    <string name="BDIN">PT. BANK DANAMON INDONESIA, TBK</string>
+    <string name="CENA">BANK CENTRAL ASIA</string>
+    <string name="MHCB">MIZUHO BANK, LTD.</string>
+    <string name="SMBC">SUMITOMO MITSUI BANKING CORPORATION</string>
+    <string name="TOMI">TOKYO TOMIN BANK LIMITED</string>
+    <string name="CHBA">CHIBA BANK, LTD., THE</string>
+    <string name="BOKF">BANK OF KYOTO,LTD.,THE</string>
+    <string name="SHBK">SHINHAN BANK</string>
+    <string name="KOEX">KEB HANA BANK</string>
+    <string name="CZNBK">KOOKMIN BANK</string>
+    <string name="HVBK">WOORI BANK</string>
+    <string name="IBKO">INDUSTRIAL BANK OF KOREA</string>
+    <string name="PUSB">BUSAN BANK</string>
+    <string name="DAEB">DAEGU BANK, LTD.,THE</string>
+    <string name="KWAB">KWANGJU BANK LTD, THE</string>
+    <string name="JJBK">JEJU BANK</string>
+    <string name="JEON">JEONBUK BANK</string>
+
+
+
+</resources>

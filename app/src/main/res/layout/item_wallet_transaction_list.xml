@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="org.blackey.ui.wallet.detail.WalletItemTransactionListViewModel" />
+
+        <variable
+            name="viewModel"
+            type="org.blackey.ui.wallet.detail.WalletItemTransactionListViewModel" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        binding:onClickCommand="@{viewModel.itemClick}"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="4dp"
+        card_view:cardCornerRadius="1dp"
+        card_view:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="9"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivTxType"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_xmrto_32dp"
+                    android:visibility="@{viewModel.ivTxTypeVisibility}" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        binding:textColor="@{viewModel.txAmountTextColor}"
+                        android:id="@+id/tx_amount"
+                        style="@style/MoneroText.PosAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:text="@{viewModel.txAmountText}" />
+
+                    <TextView
+                        android:visibility="@{viewModel.txFeeVisibility}"
+                        android:id="@+id/tx_fee"
+                        style="@style/MoneroText.PosFee"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:text="@{viewModel.txFeeText}" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tx_paymentid"
+                style="@style/MoneroText.PosNote"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_weight="13"
+                android:gravity="start"
+                android:text="@{viewModel.txPaymentidText}" />
+
+            <TextView
+                android:id="@+id/tx_datetime"
+                style="@style/MoneroText.PosDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:text="@{viewModel.txDatetimeText}" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_navigate_next_black_24dp" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+</layout>
+

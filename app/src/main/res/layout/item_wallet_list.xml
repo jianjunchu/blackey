@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="org.blackey.ui.wallet.list.WalletListItemViewModel" />
+
+        <variable
+            name="viewModel"
+            type="org.blackey.ui.wallet.list.WalletListItemViewModel" />
+    </data>
+
+
+    <android.support.v7.widget.CardView
+        binding:onClickCommand="@{viewModel.itemClick}"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        card_view:cardCornerRadius="1dp"
+        card_view:cardElevation="8dp">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_wallet_item">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:textSize="18sp"
+                android:textColor="@color/textColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="16dp"
+                android:layout_toStartOf="@+id/ibOptions"
+                android:text="@{viewModel.entity.name}" />
+
+            <TextView
+                android:id="@+id/tvAddress"
+                android:textSize="10sp"
+                android:textColor="@color/textColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvName"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="48dp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:layout_toStartOf="@+id/ibOptions"
+                android:text="@{viewModel.entity.address}" />
+
+            <ImageButton
+                binding:onClickCommand="@{viewModel.optionsClick}"
+                android:id="@+id/ibOptions"
+                style="?android:attr/actionOverflowButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</layout>
+

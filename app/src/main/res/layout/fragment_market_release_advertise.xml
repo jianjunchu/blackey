@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="org.blackey.ui.market.sell.ReleaseAdvertiseViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+
+                <TextView
+                    android:paddingTop="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingBottom="24dp"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="2dp"
+                    android:text="@{viewModel.hintFormMarketText}"
+                    android:background="@color/cornsilk"
+                    android:textColor="@color/orangered"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:padding="2dp"
+                        android:textColor="@color/textColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/currency_type" />
+
+                    <View
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/f0"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+                    <TextView
+                        binding:onClickCommand="@{viewModel.selectCurrencyOnClickCommand}"
+                        android:padding="2dp"
+                        android:textSize="16sp"
+                        android:hint="@string/hint_select_currency"
+                        android:textColor="@color/textColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@{viewModel.currencyText}" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/arrows_right" />
+                    <ImageView
+                        android:layout_marginLeft="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/iv_help" />
+
+                </LinearLayout>
+
+                <View
+                    android:background="@color/f0"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+
+                <LinearLayout
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:padding="2dp"
+                        android:textColor="@color/textColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/trading_value" />
+
+                    <View
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/f0"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:padding="2dp"
+                        android:textSize="16sp"
+                        android:inputType="numberDecimal"
+                        android:background="@color/transparent"
+                        android:textColor="@color/textColor"
+                        android:hint="@string/hint_unit_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@={viewModel.request.price}" />
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:text="@={viewModel.currencyText}"
+                        android:textColor="@color/textColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:layout_marginLeft="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/iv_help" />
+
+                </LinearLayout>
+
+
+                <View
+                    android:background="@color/f0"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <LinearLayout
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:padding="2dp"
+                        android:textColor="@color/textColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/totalsold" />
+
+                    <View
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/f0"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:padding="2dp"
+                        android:textSize="16sp"
+                        android:inputType="numberDecimal"
+                        android:background="@color/transparent"
+                        android:textColor="@color/textColor"
+                        android:layout_width="wrap_content"
+                        android:hint="@string/hint_total_inventory"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@={viewModel.request.totalInventory}" />
+
+                </LinearLayout>
+                <View
+                    android:background="@color/f0"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <LinearLayout
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:padding="2dp"
+                        android:textColor="@color/textColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/minimum" />
+
+                    <View
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/f0"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:padding="2dp"
+                        android:textSize="16sp"
+                        android:inputType="numberDecimal"
+                        android:background="@color/transparent"
+                        android:textColor="@color/textColor"
+                        android:hint="@string/hint_min_limit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@={viewModel.request.minLimit}" />
+                    <ImageView
+                        android:layout_marginLeft="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/iv_help" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:background="@color/f0"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <LinearLayout
+                    binding:onClickCommand="@{viewModel.selectPaymentModeOnClickCommand}"
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:padding="2dp"
+                        android:textColor="@color/textColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/collection_term" />
+
+                    <View
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/f0"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+                    <TextView
+                        android:visibility="@{viewModel.hintPaymentModeVisibility}"
+                        android:padding="2dp"
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/hint_collection_term" />
+
+                    <LinearLayout
+                        android:visibility="@{viewModel.paymentModeListVisibility}"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:visibility="@{viewModel.paymentModeIcon1Visibility}"
+                            android:layout_marginRight="4dp"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            binding:src="@{viewModel.icon1}" />
+
+                        <ImageView
+                            android:visibility="@{viewModel.paymentModeIcon2Visibility}"
+                            android:layout_marginRight="4dp"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            binding:src="@{viewModel.icon2}" />
+
+                        <ImageView
+                            android:visibility="@{viewModel.paymentModeIcon3Visibility}"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            binding:src="@{viewModel.icon3}" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_marginLeft="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/iv_help" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/f0"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:visibility="@{viewModel.offerOrderVisibility}"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/textColorVice"
+                        android:text="@{viewModel.offerOrderText}"
+                        android:textSize="18sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:text="@={viewModel.request.leaveWord}"
+                    android:gravity="left|top"
+                    android:hint="@string/market_explain"
+                    android:inputType="textMultiLine"
+                    android:minLines="6"
+                    android:padding="16dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/f0"/>
+
+                <LinearLayout
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:padding="2dp"
+                        android:textColor="@color/textColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/opening_hours" />
+
+
+                    <LinearLayout
+                        android:gravity="right|center_vertical"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{viewModel.anytime}"
+                            binding:onCheckedChangedCommand="@{viewModel.anytimeCheckedChangeCommand}"
+                            android:text="@string/anytime" />
+
+                        <RadioButton
+                            android:checked="@{viewModel.custom}"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            binding:onCheckedChangedCommand="@{viewModel.customCheckedChangeCommand}"
+                            android:text="@string/custom" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_marginLeft="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/iv_help" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/f0"/>
+
+                <LinearLayout
+                    android:visibility="@{viewModel.customVisibility}"
+                    android:padding="16dp"
+                    android:background="@color/f0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        binding:onClickCommand="@{viewModel.selSundayOnClickCommand}"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="@string/every_sunday"
+                            android:textSize="14sp"
+                            android:textColor="@color/textColor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:layout_marginTop="4dp"
+                            android:text="@={viewModel.sunSatrtTimeText}"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="~"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="@={viewModel.sunEndTimeText}"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        binding:onClickCommand="@{viewModel.selMondayOnClickCommand}"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="@string/every_monday"
+                            android:textSize="14sp"
+                            android:textColor="@color/textColor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:layout_marginTop="4dp"
+                            android:text="@={viewModel.monSatrtTimeText}"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="~"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="@={viewModel.monEndTimeText}"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        binding:onClickCommand="@{viewModel.selTuesdayOnClickCommand}"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="@string/every_tuesday"
+                            android:textSize="14sp"
+                            android:textColor="@color/textColor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:layout_marginTop="4dp"
+                            android:text="@={viewModel.tuesSatrtTimeText}"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="~"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="@={viewModel.tuesEndTimeText}"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        binding:onClickCommand="@{viewModel.selWednesdayOnClickCommand}"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="@string/every_wednesday"
+                            android:textSize="14sp"
+                            android:textColor="@color/textColor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:layout_marginTop="4dp"
+                            android:text="@={viewModel.wedSatrtTimeText}"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="~"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="@={viewModel.wedEndTimeText}"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        binding:onClickCommand="@{viewModel.selThursdayOnClickCommand}"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="@string/every_thursday"
+                            android:textSize="14sp"
+                            android:textColor="@color/textColor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:layout_marginTop="4dp"
+                            android:text="@={viewModel.thurSatrtTimeText}"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="~"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="@={viewModel.thurEndTimeText}"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        binding:onClickCommand="@{viewModel.selFridayOnClickCommand}"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="@string/every_friday"
+                            android:textSize="14sp"
+                            android:textColor="@color/textColor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:layout_marginTop="4dp"
+                            android:text="@={viewModel.friSatrtTimeText}"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="~"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="@={viewModel.friEndTimeText}"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        binding:onClickCommand="@{viewModel.selSaturdayOnClickCommand}"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="@string/every_saturday"
+                            android:textSize="14sp"
+                            android:textColor="@color/textColor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:layout_marginTop="4dp"
+                            android:text="@={viewModel.satSatrtTimeText}"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="~"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="@={viewModel.satEndTimeText}"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:padding="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        binding:onClickCommand="@{viewModel.confirmOnClickCommand}"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:background="@drawable/color_primary_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/confirm" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>

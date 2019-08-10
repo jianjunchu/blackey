@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">RxTools</string>
+    <string name="newest_apk_down">Find new version%1$s，Download now?</string>
+    <string name="newest_apk_down_int">Find new version%1$d，Download now?</string>
+
+    <string name="hint_login_password">Input Password</string>
+    <string name="login">Login</string>
+    <string name="login_forget_pwd">Forget Password?</string>
+    <string name="android_origin">Android</string>
+    <string name="number_letter">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="number">0123456789</string>
+
+    <string name="rmb">¥</string>
+
+    <string name="journey">Journey</string>
+    <string name="distance">Distance</string>
+    <string name="km_h">km/h</string>
+
+</resources>

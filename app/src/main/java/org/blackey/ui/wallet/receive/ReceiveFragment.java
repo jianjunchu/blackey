@@ -1,0 +1,568 @@
+package org.blackey.ui.wallet.receive;
+
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.content.FileProvider;
+import android.support.v7.widget.ShareActionProvider;
+import android.text.Editable;
+import android.text.InputType;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import org.blackey.BR;
+import org.blackey.R;
+import org.blackey.databinding.FragmentWalletReceiveBinding;
+import org.blackey.ui.base.BlackeyBaseFragment;
+import org.blackey.ui.wallet.detail.GenerateReviewFragment;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.EncodeHintType;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeWriter;
+import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
+import com.m2049r.xmrwallet.data.BarcodeData;
+import com.m2049r.xmrwallet.model.Wallet;
+import com.m2049r.xmrwallet.model.WalletManager;
+import com.m2049r.xmrwallet.util.Helper;
+import com.m2049r.xmrwallet.util.MoneroThreadPoolExecutor;
+import com.m2049r.xmrwallet.widget.ExchangeView;
+import com.vondear.rxtool.view.RxToast;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import timber.log.Timber;
+
+public class ReceiveFragment extends BlackeyBaseFragment<FragmentWalletReceiveBinding,ReceiveViewModel> {
+
+    private Wallet wallet = null;
+    private boolean isMyWallet = false;
+
+    public interface Listener {
+        void setToolbarButton(int type);
+
+        void setTitle(String title);
+
+        void setSubtitle(String subtitle);
+    }
+
+
+    @Override
+    public int initContentView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return R.layout.fragment_wallet_receive;
+    }
+
+    @Override
+    public int initVariableId() {
+        return BR.viewModel;
+    }
+
+    @Override
+    public void initData() {
+
+        showProgress();
+        clearQR();
+
+        Bundle b = getArguments();
+        String address = b.getString("address");
+        String walletName = b.getString("name");
+        Timber.d("%s/%s", address, walletName);
+        if (address == null) {
+            String path = b.getString("path");
+            String password = b.getString("password");
+            loadAndShow(path, password);
+        } else {
+            if (getActivity() instanceof GenerateReviewFragment.ListenerWithWallet) {
+                wallet = ((GenerateReviewFragment.ListenerWithWallet) getActivity()).getWallet();
+                show();
+            } else {
+                throw new IllegalStateException("no wallet info");
+            }
+        }
+
+        viewModel.initToolbar(walletName);
+    }
+
+    @Override
+    public void initViewObservable() {
+        binding.etDummy.setRawInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+
+        binding.bCopyAddress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                copyAddress();
+            }
+        });
+
+        binding.evAmount.setOnNewAmountListener(new ExchangeView.OnNewAmountListener() {
+            @Override
+            public void onNewAmount(String xmr) {
+                Timber.d("new amount = %s", xmr);
+                generateQr();
+            }
+        });
+
+        binding.evAmount.setOnFailedExchangeListener(new ExchangeView.OnFailedExchangeListener() {
+            @Override
+            public void onFailedExchange() {
+                if (isAdded()) {
+                    clearQR();
+                    Toast.makeText(getActivity(), getString(R.string.message_exchange_failed), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        final EditText notesEdit = binding.etNotes.getEditText();
+        notesEdit.setRawInputType(InputType.TYPE_CLASS_TEXT);
+        notesEdit.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER) && (event.getAction() == KeyEvent.ACTION_DOWN))
+                        || (actionId == EditorInfo.IME_ACTION_DONE)) {
+                    generateQr();
+                    return true;
+                }
+                return false;
+            }
+        });
+        notesEdit.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                clearQR();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        binding.bSubaddress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                enableSubaddressButton(false);
+                enableCopyAddress(false);
+
+                final Runnable newAddress = new Runnable() {
+                    public void run() {
+                        getNewSubaddress();
+                    }
+                };
+
+                binding.tvAddress.animate().alpha(0).setDuration(250)
+                        .withEndAction(newAddress).start();
+            }
+        });
+
+        binding.qrCode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Helper.hideKeyboard(getActivity());
+                binding.etDummy.requestFocus();
+                if (qrValid) {
+                    binding.qrCodeFull.setImageBitmap(((BitmapDrawable) binding.qrCode.getDrawable()).getBitmap());
+                    binding.qrCodeFull.setVisibility(View.VISIBLE);
+                } else {
+                    binding.evAmount.doExchange();
+                }
+            }
+        });
+
+        binding.qrCodeFull.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.qrCodeFull.setImageBitmap(null);
+                binding.qrCodeFull.setVisibility(View.GONE);
+            }
+        });
+    }
+
+    private ShareActionProvider shareActionProvider;
+
+    private void setShareIntent() {
+        if (shareActionProvider != null) {
+            if (qrValid) {
+                shareActionProvider.setShareIntent(getShareIntent());
+            } else {
+                shareActionProvider.setShareIntent(null);
+            }
+        }
+    }
+
+    private void saveQrCode() {
+        if (!qrValid) throw new IllegalStateException("trying to save null qr code!");
+
+        File cachePath = new File(getActivity().getCacheDir(), "images");
+        if (!cachePath.exists())
+            if (!cachePath.mkdirs()) throw new IllegalStateException("cannot create images folder");
+        File png = new File(cachePath, "QR.png");
+        try {
+            FileOutputStream stream = new FileOutputStream(png);
+            Bitmap qrBitmap = ((BitmapDrawable) binding.qrCode.getDrawable()).getBitmap();
+            qrBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            stream.close();
+        } catch (IOException ex) {
+            Timber.e(ex);
+            // make sure we don't share an old qr code
+            if (!png.delete()) throw new IllegalStateException("cannot delete old qr code");
+            // if we manage to delete it, the URI points to nothing and the user gets a toast with the error
+        }
+    }
+
+    private Intent getShareIntent() {
+        File imagePath = new File(getActivity().getCacheDir(), "images");
+        File png = new File(imagePath, "QR.png");
+        Uri contentUri = FileProvider.getUriForFile(getActivity(),
+                "com.m2049r.xmrwallet.fileprovider", png);
+        if (contentUri != null) {
+            Intent shareIntent = new Intent();
+            shareIntent.setAction(Intent.ACTION_SEND);
+            shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION); // temp permission for receiving app to read this file
+            shareIntent.setDataAndType(contentUri, getActivity().getContentResolver().getType(contentUri));
+            shareIntent.putExtra(Intent.EXTRA_STREAM, contentUri);
+            shareIntent.putExtra(Intent.EXTRA_TEXT, bcData.getUriString());
+            return shareIntent;
+        }
+        return null;
+    }
+
+    void enableSubaddressButton(boolean enable) {
+        binding.bSubaddress.setEnabled(enable);
+        if (enable) {
+            binding.bSubaddress.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_settings_orange_24dp, 0, 0);
+        } else {
+            binding.bSubaddress.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_settings_gray_24dp, 0, 0);
+        }
+    }
+
+    void copyAddress() {
+        Helper.clipBoardCopy(getActivity(), getString(R.string.label_copy_address), binding.tvAddress.getText().toString());
+        RxToast.showToast(getString(R.string.message_copy_address));
+    }
+
+    private boolean qrValid = false;
+
+    void clearQR() {
+        if (qrValid) {
+            binding. qrCode.setImageBitmap(null);
+            qrValid = false;
+            setShareIntent();
+            if (isLoaded)
+                binding. tvQrCode.setVisibility(View.VISIBLE);
+        }
+    }
+
+    void setQR(Bitmap qr) {
+        binding.qrCode.setImageBitmap(qr);
+        qrValid = true;
+        setShareIntent();
+        binding.tvQrCode.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Timber.d("onResume()");
+        if (wallet != null) {
+            listenerCallback.setSubtitle(wallet.getAccountLabel());
+            generateQr();
+        } else {
+            listenerCallback.setSubtitle(getString(R.string.status_wallet_loading));
+            clearQR();
+        }
+    }
+
+    private boolean isLoaded = false;
+
+    private void show() {
+        Timber.d("name=%s", wallet.getName());
+        isLoaded = true;
+        listenerCallback.setTitle(wallet.getName());
+        listenerCallback.setSubtitle(wallet.getAccountLabel());
+        binding.tvAddress.setText(wallet.getAddress());
+        enableCopyAddress(true);
+        hideProgress();
+        generateQr();
+    }
+
+    private void enableCopyAddress(boolean enable) {
+        binding.bCopyAddress.setClickable(enable);
+        if (enable)
+            binding.bCopyAddress.setImageResource(R.drawable.ic_content_copy_black_24dp);
+        else
+            binding.bCopyAddress.setImageResource(R.drawable.ic_content_nocopy_black_24dp);
+    }
+
+    private void loadAndShow(String walletPath, String password) {
+        new AsyncShow(walletPath, password).executeOnExecutor(MoneroThreadPoolExecutor.MONERO_THREAD_POOL_EXECUTOR);
+    }
+
+    GenerateReviewFragment.ProgressListener progressCallback = null;
+
+    private class AsyncShow extends AsyncTask<Void, Void, Boolean> {
+        final private String walletPath;
+        final private String password;
+
+
+        AsyncShow(String walletPath, String passsword) {
+            super();
+            this.walletPath = walletPath;
+            this.password = passsword;
+        }
+
+        boolean dialogOpened = false;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            showProgress();
+            if ((walletPath != null)
+                    && (WalletManager.getInstance().queryWalletDevice(walletPath + ".keys", password)
+                    == Wallet.Device.Device_Ledger)
+                    && (progressCallback != null)) {
+                dialogOpened = true;
+            }
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... params) {
+            if (params.length != 0) return false;
+            wallet = WalletManager.getInstance().openWallet(walletPath, password);
+            isMyWallet = true;
+            return true;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean result) {
+            super.onPostExecute(result);
+            if (dialogOpened)
+                progressCallback.dismissProgressDialog();
+            if (!isAdded()) return; // never mind
+            if (result) {
+                show();
+            } else {
+                Toast.makeText(getActivity(), getString(R.string.receive_cannot_open), Toast.LENGTH_LONG).show();
+                hideProgress();
+            }
+        }
+    }
+
+    private void storeWallet() {
+        new AsyncStore().executeOnExecutor(MoneroThreadPoolExecutor.MONERO_THREAD_POOL_EXECUTOR);
+    }
+
+    private class AsyncStore extends AsyncTask<String, Void, Boolean> {
+
+        @Override
+        protected Boolean doInBackground(String... params) {
+            if (params.length != 0) return false;
+            if (wallet != null) wallet.store();
+            return true;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean result) {
+            enableSubaddressButton(true);
+            super.onPostExecute(result);
+        }
+    }
+
+    public BarcodeData getBarcodeData() {
+        if (qrValid)
+            return bcData;
+        else
+            return null;
+    }
+
+    private BarcodeData bcData = null;
+
+    private void generateQr() {
+        Timber.d("GENQR");
+        String address = binding.tvAddress.getText().toString();
+        String notes = binding.etNotes.getEditText().getText().toString();
+        String xmrAmount = binding.evAmount.getAmount();
+        Timber.d("%s/%s/%s", xmrAmount, notes, address);
+        if ((xmrAmount == null) || !Wallet.isAddressValid(address)) {
+            clearQR();
+            Timber.d("CLEARQR");
+            return;
+        }
+        bcData = new BarcodeData(BarcodeData.Asset.XMR, address, null, notes, xmrAmount);
+        int size = Math.max(binding.qrCode.getWidth(), binding.qrCode.getHeight());
+        Bitmap qr = generate(bcData.getUriString(), size, size);
+        if (qr != null) {
+            setQR(qr);
+            Timber.d("SETQR");
+            binding.etDummy.requestFocus();
+            Helper.hideKeyboard(getActivity());
+        }
+    }
+
+    public Bitmap generate(String text, int width, int height) {
+        if ((width <= 0) || (height <= 0)) return null;
+        Map<EncodeHintType, Object> hints = new HashMap<>();
+        hints.put(EncodeHintType.CHARACTER_SET, "utf-8");
+        hints.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.M);
+        try {
+            BitMatrix bitMatrix = new QRCodeWriter().encode(text, BarcodeFormat.QR_CODE, width, height, hints);
+            int[] pixels = new int[width * height];
+            for (int i = 0; i < height; i++) {
+                for (int j = 0; j < width; j++) {
+                    if (bitMatrix.get(j, i)) {
+                        pixels[i * width + j] = 0x00000000;
+                    } else {
+                        pixels[i * height + j] = 0xffffffff;
+                    }
+                }
+            }
+            Bitmap bitmap = Bitmap.createBitmap(pixels, 0, width, width, height, Bitmap.Config.RGB_565);
+            bitmap = addLogo(bitmap);
+            return bitmap;
+        } catch (WriterException ex) {
+            Timber.e(ex);
+        }
+        return null;
+    }
+
+    private Bitmap addLogo(Bitmap qrBitmap) {
+        Bitmap logo = getMoneroLogo();
+        int qrWidth = qrBitmap.getWidth();
+        int qrHeight = qrBitmap.getHeight();
+        int logoWidth = logo.getWidth();
+        int logoHeight = logo.getHeight();
+
+        Bitmap logoBitmap = Bitmap.createBitmap(qrWidth, qrHeight, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(logoBitmap);
+        canvas.drawBitmap(qrBitmap, 0, 0, null);
+        canvas.save();
+        // figure out how to scale the logo
+        float scaleSize = 1.0f;
+        while ((logoWidth / scaleSize) > (qrWidth / 5) || (logoHeight / scaleSize) > (qrHeight / 5)) {
+            scaleSize *= 2;
+        }
+        float sx = 1.0f / scaleSize;
+        canvas.scale(sx, sx, qrWidth / 2, qrHeight / 2);
+        canvas.drawBitmap(logo, (qrWidth - logoWidth) / 2, (qrHeight - logoHeight) / 2, null);
+        canvas.restore();
+        return logoBitmap;
+    }
+
+    private Bitmap logo = null;
+
+    private Bitmap getMoneroLogo() {
+        if (logo == null) {
+            logo = Helper.getBitmap(getContext(), R.mipmap.ic_launcher);
+        }
+        return logo;
+    }
+
+    public void showProgress() {
+        binding.pbProgress.setVisibility(View.VISIBLE);
+    }
+
+    public void hideProgress() {
+        binding.pbProgress.setVisibility(View.GONE);
+    }
+
+    Listener listenerCallback = null;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof Listener) {
+            this.listenerCallback = (Listener) context;
+        } else {
+            throw new ClassCastException(context.toString()
+                    + " must implement Listener");
+        }
+        if (context instanceof GenerateReviewFragment.ProgressListener) {
+            this.progressCallback = (GenerateReviewFragment.ProgressListener) context;
+        }
+    }
+
+    @Override
+    public void onPause() {
+        Timber.d("onPause()");
+        super.onPause();
+    }
+
+    @Override
+    public void onDetach() {
+        Timber.d("onDetach()");
+        if ((wallet != null) && (isMyWallet)) {
+            wallet.close();
+            wallet = null;
+            isMyWallet = false;
+        }
+        super.onDetach();
+    }
+
+    private void getNewSubaddress() {
+        new AsyncSubaddress().executeOnExecutor(MoneroThreadPoolExecutor.MONERO_THREAD_POOL_EXECUTOR);
+    }
+
+    private class AsyncSubaddress extends AsyncTask<Void, Void, Boolean> {
+        private String newSubaddress;
+
+        boolean dialogOpened = false;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            if ((wallet.getDeviceType() == Wallet.Device.Device_Ledger) && (progressCallback != null)) {
+                dialogOpened = true;
+            }
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... params) {
+            if (params.length != 0) return false;
+            newSubaddress = wallet.getNewSubaddress();
+            storeWallet();
+            return true;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean result) {
+            super.onPostExecute(result);
+            if (dialogOpened)
+                progressCallback.dismissProgressDialog();
+            binding.tvAddress.setText(newSubaddress);
+            binding.tvAddressLabel.setText(getString(R.string.generate_address_label_sub,
+                    wallet.getNumSubaddresses() - 1));
+            generateQr();
+            enableCopyAddress(true);
+            final Runnable resetSize = new Runnable() {
+                public void run() {
+                    binding.tvAddress.animate().setDuration(125).scaleX(1).scaleY(1).start();
+                }
+            };
+            binding.tvAddress.animate().alpha(1).setDuration(125)
+                    .scaleX(1.2f).scaleY(1.2f)
+                    .withEndAction(resetSize).start();
+        }
+    }
+
+
+}

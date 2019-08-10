@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1898f3</color>
+    <color name="colorPrimaryDark">#1898f3</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="textColor">#202020</color>
+    <color name="textColorHint">#A0A0A0</color>
+    <color name="textColorVice">#6C6C6C</color>
+    <color name="viewLineColor">#F0F0F0</color>
+    <color name="orange_ffaa22">#ffaa22</color>
+
+    <integer-array name="gplus_colors">
+        <item>@color/gplus_color_1</item>
+        <item>@color/gplus_color_2</item>
+        <item>@color/gplus_color_3</item>
+        <item>@color/gplus_color_4</item>
+    </integer-array>
+    <color name="gplus_color_1">#3e802f</color>
+    <color name="gplus_color_2">#f4b400</color>
+    <color name="gplus_color_3">#427fed</color>
+    <color name="gplus_color_4">#FFB23424</color>
+
+    <color name="tx_green">#FF417505</color>
+    <color name="tx_red">#FFFF6105</color>
+    <color name="tx_pending">#61000000</color>
+    <color name="tx_failed">#000000</color>
+
+    <color name="gradientOrange">#FFFF6105</color>
+    <color name="gradientPink">#FFF0006B</color>
+    <color name="dotGray">#FF4A4A4A</color>
+    <color name="moneroGray">#FD9B9B9B</color>
+</resources>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="org.blackey.ui.mine.certification.CertificationResultViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include
+            android:id="@+id/include"
+            layout="@layout/layout_toolbar"
+            binding:toolbarViewModel="@{viewModel}" />
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="24dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_marginTop="48dp"
+                binding:src="@{viewModel.passedImage}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                binding:srcCompat="@mipmap/kyc_liveness" />
+
+            <LinearLayout
+                android:layout_marginTop="16dp"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    binding:src="@{viewModel.passedIcon}"
+                    binding:srcCompat="@mipmap/ic_kyc_passed" />
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@={viewModel.passedText}" />
+
+
+            </LinearLayout>
+
+            <Button
+                binding:onClickCommand="@{viewModel.buttonClickCommand}"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:background="@drawable/color_primary_button"
+                android:layout_marginTop="48dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={viewModel.buttonText}" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="org.blackey.ui.splash.SplashViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:background="@drawable/splash"
+        style="@style/MatchMatch">
+
+    </RelativeLayout>
+</layout>

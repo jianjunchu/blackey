@@ -1,0 +1,352 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!--将ActionBar隐藏,这里使用ToolBar-->
+        <item name="windowActionBar">false</item>
+        <!-- 使用 API Level 22以上编译的话，要拿掉前綴字 -->
+        <item name="windowNoTitle">true</item>
+        <!--colorPrimary 对应ToolBar的颜色-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--colorPrimaryDark对应状态栏的颜色-->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!--colorAccent 对应EditText编辑时、RadioButton选中、CheckBox等选中时的颜色。-->
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="ViewLineStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/viewLineColor</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
+
+    <style name="MatchMatch">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="WrapWrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="BannerDefaultStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <!-- 自定义属性在styles.xml中不需要命名空间,直接用属性名就可以了 -->
+        <!-- 开启自动轮播 -->
+        <item name="banner_pointAutoPlayAble">true</item>
+        <!-- 自动轮播的时间间隔 -->
+        <item name="banner_pointAutoPlayInterval">3000</item>
+        <!-- 指示点容器背景 -->
+        <item name="banner_pointContainerBackground">#44aaaaaa</item>
+        <!-- 指示点背景 -->
+        <item name="banner_pointDrawable">@drawable/bga_banner_selector_point_hollow</item>
+        <!-- 指示点容器左右内间距 -->
+        <item name="banner_pointContainerLeftRightPadding">10dp</item>
+        <!-- 指示点上下外间距 -->
+        <item name="banner_pointTopBottomMargin">6dp</item>
+        <!-- 指示点左右外间距 -->
+        <item name="banner_pointLeftRightMargin">3dp</item>
+        <!-- 指示器的位置 -->
+        <item name="banner_indicatorGravity">bottom|center_horizontal</item>
+        <!-- 页码切换过程的时间长度 -->
+        <item name="banner_pageChangeDuration">800</item>
+        <!-- 提示文案的文字大小 -->
+        <item name="banner_tipTextSize">10sp</item>
+        <!-- 提示文案的文字颜色 -->
+        <item name="banner_tipTextColor">@android:color/white</item>
+        <!-- 加载网络数据时覆盖在BGABanner最上层的占位图 -->
+        <item name="banner_placeholderDrawable">@mipmap/banner</item>
+    </style>
+
+    <style name="MoneroLabel" parent="@android:style/TextAppearance.DeviceDefault.Medium">
+        <item name="android:textColor">?colorPrimary</item>
+        <item name="android:textColorHint">@color/textColorHint</item>
+    </style>
+
+    <style name="MoneroLabel.Heading">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MoneroLabel.Gray">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="MoneroLabel.Heading.Donation">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="MoneroText" parent="@android:style/TextAppearance.DeviceDefault.Medium">
+        <item name="android:textColor">?colorPrimary</item>
+        <item name="android:textColorHint">@color/textColorHint</item>
+    </style>
+
+    <style name="MoneroText.Funds">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MoneroText.Gray">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+    <style name="MoneroText.Black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="MoneroText.Success">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MoneroText.Gray.SuccessFee">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="MoneroButton.Green">
+        <item name="android:background">@drawable/button_selector_green</item>
+    </style>
+
+
+
+    <style name="MoneroText.Confirm">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="MoneroText.Confirm.Label">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MoneroText.Monospace">
+        <item name="android:fontFamily">monospace</item>
+    </style>
+
+    <style name="MoneroEdit" parent="MoneroText">
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+    </style>
+
+
+    <style name="MoneroText.Monospace.Mnemonic">
+        <item name="android:lineSpacingMultiplier">1.2</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MoneroButton" parent="@style/Widget.AppCompat.Button">
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textAppearance">@style/MoneroLabel</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="MoneroFab" parent="@android:style/TextAppearance.DeviceDefault.Medium">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- textSize is in dp here to match the layout of the numpad-->
+    <style name="MoneroLabel.NumPad">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="MoneroSpinnerGray" parent="@style/Widget.AppCompat.Spinner">
+        <item name="android:background">@drawable/backgound_spinner_gray</item>
+    </style>
+
+    <style name="MoneroText.Medium">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="MoneroText.Button" parent="@android:style/TextAppearance.DeviceDefault.Medium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="MoneroText.Button.Small">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="MoneroText.Balance">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MoneroText.Unconfirmed">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MoneroText.PosAmount">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MoneroText.PosFee">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#FF898989</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="MoneroText.PosNote">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#FF4A4A4A</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="MoneroText.PosDate">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#FF616161</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="MoneroText.Balance.Orange">
+        <item name="android:textColor">@color/orangered</item>
+    </style>
+
+    <style name="MoneroSpinnerItem" parent="android:Widget.TextView.SpinnerItem">
+        <item name="android:textAppearance">@style/MoneroTextAppearanceSpinnerItem</item>
+    </style>
+
+    <style name="MoneroTextAppearanceSpinnerItem" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
+        <item name="android:textColor">@color/orangered</item>
+    </style>
+
+    <style name="MoneroSpinnerItem.Balance">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="MoneroButton.Take">
+        <item name="android:background">@color/green_388e3c</item>
+    </style>
+    <style name="MoneroButton.Give">
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="MoneroText.Info">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/textColor</item>
+    </style>
+
+    <style name="MoneroLabel.Caps">
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="MoneroLabel.Caps.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="MoneroLabel.Caps.Black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+    <style name="jmui_chat_item_receive_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="jmui_chat_item_send_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="jmui_chat_text_date_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:textColor">#555756</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+
+    <style name="jmui_msg_text_style">
+        <item name="android:maxWidth">225dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingTop">9dp</item>
+        <item name="android:paddingBottom">8.67dp</item>
+        <item name="android:textColor">@color/textColor</item>
+    </style>
+
+    <style name="jmui_chat_display_name_style">
+        <item name="android:ems">5</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">#B3B3B3</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+
+    <style name="jmui_chat_item_receiver_avatar_style">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:src">@mipmap/icon_person</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+
+    <style name="jmui_chat_item_sender_avatar_style">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:src">@mipmap/icon_person</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">8dp</item>
+
+    </style>
+
+    <style name="TextAppearance.Design.Tab.Custom" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="MoneroLabel.Small">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="MoneroButton.Small">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+</resources>

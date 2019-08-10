@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="CASH">Cash</string>
+    <string name="BANKACCOUNT">Bank Transfer</string>
+    <string name="WECHAT">WeChatPay</string>
+    <string name="ALIPAY">AliPay</string>
+    <string name="PAYPAL">PayPal</string>
+    <string name="PAYNOW">PayNow</string>
+    <string name="GRABPAY">GrabPay</string>
+    <string name="PAYLAH">PayLah</string>
+</resources>

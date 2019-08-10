@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="org.blackey.ui.login.RegisterViewModel" />
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <include
+                android:id="@+id/include"
+                layout="@layout/layout_toolbar"
+                binding:toolbarViewModel="@{viewModel}" />
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="24dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    binding:onClickCommand="@{viewModel.chooseCountryOnClickCommand}"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:textSize="18dp"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/country" />
+
+                    <TextView
+                        android:id="@+id/country"
+                        android:textSize="18dp"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="@={viewModel.country}" />
+
+                    <ImageView
+                        android:layout_marginRight="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/arrows_right" />
+
+                </LinearLayout>
+
+                <View
+                    android:background="@color/gray"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_marginTop="24dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/mobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_login_mobile"
+                        android:ems="10"
+                        android:inputType="phone"
+                        android:text="@={viewModel.request.mobile}"
+                        android:maxLines="1"
+                        android:singleLine="true"/>
+
+
+
+                </android.support.design.widget.TextInputLayout>
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:text="@={viewModel.mobileError}"
+                        android:textColor="@color/custom_progress_red_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+
+                <FrameLayout
+                    android:layout_marginTop="24dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <EditText
+                            android:id="@+id/captcha"
+                            android:inputType="phone"
+                            android:text="@={viewModel.request.captcha}"
+                            android:hint="@string/hint_login_captcha"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"/>
+
+
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <TextView
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp"
+                        android:textColor="@color/blue_2196F3"
+                        android:text="@{viewModel.getCaptcha}"
+                        binding:onClickCommand="@{viewModel.sendCaptchaOnClickCommand}"/>
+                </FrameLayout>
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:text="@={viewModel.captchaError}"
+                        android:textColor="@color/custom_progress_red_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_marginTop="24dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <EditText
+                        android:id="@+id/password"
+                        android:hint="@string/hint_set_login_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:text="@={viewModel.request.password}"
+                        android:inputType="textPassword" />
+
+
+
+                </android.support.design.widget.TextInputLayout>
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:text="@={viewModel.passwordError}"
+                        android:textColor="@color/custom_progress_red_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_marginTop="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <CheckBox
+                        android:id="@+id/checkBox"
+                        android:checked="@{viewModel.readAgree}"
+                        binding:onCheckedChangedCommand="@{viewModel.readAgreeOnCheckedChangedCommand}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/read_agree" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/blue_2196F3"
+                        android:text="@string/terms_service" />
+                </LinearLayout>
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:text="@={viewModel.readAgreeError}"
+                        android:textColor="@color/custom_progress_red_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:background="@drawable/login_submit_button"
+                    android:layout_marginTop="16dp"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_width="match_parent"
+                    binding:onClickCommand="@{viewModel.registerOnClickCommand}"
+                    android:layout_height="wrap_content"
+                    android:text="@string/next_step" />
+
+            </LinearLayout>
+            </ScrollView>
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="org.blackey.ui.market.list.MarketListItemViewModel" />
+
+        <variable
+            name="viewModel"
+            type="org.blackey.ui.market.list.MarketListItemViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        binding:onClickCommand="@{viewModel.itemClick}">
+
+
+        <!-- 英文首字母 或者显示汉字笔画数 -->
+
+        <LinearLayout
+            android:gravity="top|center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <me.goldze.mvvmhabit.widget.CircleImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    binding:url="@{viewModel.entity.userPortrait}"
+                    binding:placeholderRes="@{viewModel.placeholderRes}"
+                    android:src="@mipmap/icon_person" />
+
+                <me.goldze.mvvmhabit.widget.CircleImageView
+                    android:layout_gravity="bottom|right"
+                    android:layout_width="6dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_height="6dp"
+                    android:src="@color/green_388e3c"/>
+
+            </FrameLayout>
+
+
+
+
+            <ImageView
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_real_name" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@={viewModel.entity.userNickname}" />
+
+            <LinearLayout
+                android:layout_marginTop="2dp"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/deal" />
+
+                <TextView
+                    android:layout_marginLeft="4dp"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@={viewModel.userCountTradesText}" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="12dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:background="@color/gray"/>
+
+                <TextView
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/good_reputation" />
+
+                <TextView
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@={viewModel.userCountPraiseText}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="2dp"
+                android:background="@drawable/color_red_button"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/list_minimum_buy_quantity" />
+
+                <TextView
+                    android:textColor="@color/white"
+                    android:background="@drawable/color_red_button"
+                    android:textSize="8sp"
+                    android:layout_marginRight="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@={viewModel.entity.currencyName}" />
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@={viewModel.minLimitText}" />
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" - " />
+
+
+
+                <TextView
+                    android:layout_marginRight="4dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@={viewModel.maxLimitText}" />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_marginTop="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:visibility="@{viewModel.paymentModeId1Visibility}"
+                    binding:src="@{viewModel.paymentModeId1Icon}" />
+                <ImageView
+                    android:layout_marginLeft="8dp"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:visibility="@{viewModel.paymentModeId2Visibility}"
+                    binding:src="@{viewModel.paymentModeId2Icon}" />
+                <ImageView
+                    android:layout_marginLeft="8dp"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:visibility="@{viewModel.paymentModeId3Visibility}"
+                    binding:src="@{viewModel.paymentModeId3Icon}" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="2dp"
+                android:text="@={viewModel.entity.createTime}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:gravity="bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:gravity="bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/unit_price"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:gravity="bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:text="@={viewModel.entity.currencyName}"
+                    android:textColor="@color/custom_progress_red_header"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:gravity="bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:text="@={viewModel.priceText}"
+                    android:textColor="@color/custom_progress_red_header"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:gravity="bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/receive_amount_hint"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:gravity="bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:text="@={viewModel.inventoryText}"
+                    android:textColor="@color/custom_progress_red_header"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:gravity="bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:text="xmr"
+                    android:textColor="@color/custom_progress_red_header"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+
+            <View
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <Button
+                binding:onClickCommand="@{viewModel.itemClick}"
+                android:layout_gravity="right|bottom"
+                android:textColor="@color/custom_progress_red_header"
+                android:textSize="14sp"
+                android:background="@drawable/button_buy"
+                android:layout_width="72dp"
+                android:layout_height="32dp"
+                android:text="@string/go_buy" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>
+

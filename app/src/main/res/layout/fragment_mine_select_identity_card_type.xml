@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="org.blackey.ui.mine.certification.SelectIdentityCardTypeViewModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        style="@style/MatchMatch">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/layout_toolbar"
+            app:toolbarViewModel="@{viewModel}" />
+
+        <TextView
+            android:padding="16dp"
+            android:lineSpacingExtra="6dp"
+            android:background="@color/f0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hint_certification" />
+
+        <LinearLayout
+            binding:onClickCommand="@{viewModel.chooseCountryOnClickCommand}"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textColor"
+                android:textSize="14sp"
+                android:text="@string/country" />
+
+
+            <TextView
+                android:paddingRight="8dp"
+                android:textSize="14sp"
+                android:gravity="right"
+                android:textColor="@color/textColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/hint_country"
+                android:text="@={viewModel.nationalityText}" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                binding:srcCompat="@mipmap/arrows_right" />
+        </LinearLayout>
+
+        <TextView
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:lineSpacingExtra="6dp"
+            android:background="@color/f0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hint_select_document_type" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="15dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/identity_card"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:checked="@{viewModel.identityCardChecked}"
+                binding:onCheckedChangedCommand="@{viewModel.identityCardCheckedChangeCommand}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/f0"/>
+        <LinearLayout
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:text="@string/passport" />
+
+            <RadioButton
+                android:checked="@{viewModel.passportChecked}"
+                binding:onCheckedChangedCommand="@{viewModel.passportCheckedChangeCommand}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:background="@color/f0"
+            android:layout_weight="1"
+            android:paddingTop="32dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                binding:onClickCommand="@{viewModel.nextClickCommand}"
+                android:textColor="@color/white"
+                android:background="@drawable/color_primary_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/start_certification" />
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+</layout>

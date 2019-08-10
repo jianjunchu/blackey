@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="org.blackey.ui.mine.myaccount.form.MyAccountFormViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include
+            android:id="@+id/include"
+            layout="@layout/layout_toolbar"
+            app:toolbarViewModel="@{viewModel}" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/trust" />
+
+                    <TextView
+                        android:paddingLeft="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/textColorVice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/currency_type" />
+
+                    <View
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/f0"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+
+                    <Spinner
+                        android:id="@+id/spinner_currency"
+                        android:layout_gravity="center_vertical"
+                        android:padding="2dp"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+                <View
+                    android:background="@color/f0"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <LinearLayout
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/trust" />
+
+                    <TextView
+                        android:paddingLeft="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/textColorVice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/account_type" />
+
+                    <View
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/f0"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+
+                    <Spinner
+                        android:id="@+id/spinner_account_type"
+                        android:layout_gravity="center_vertical"
+                        android:padding="2dp"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+                <View
+                    android:background="@color/f0"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <LinearLayout
+                    android:visibility="@{viewModel.bankNameVisibility}"
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        binding:srcCompat="@mipmap/bank" />
+
+                    <TextView
+                        android:paddingLeft="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/textColorVice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bank_name" />
+
+                    <View
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/f0"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+                    <Spinner
+                        android:id="@+id/spinner_bank_name"
+                        android:layout_gravity="center_vertical"
+                        android:padding="2dp"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <View
+                    android:visibility="@{viewModel.bankNameVisibility}"
+                    android:background="@color/f0"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <LinearLayout
+                    android:visibility="@{viewModel.openingBankVisibility}"
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        binding:srcCompat="@mipmap/opening_bank" />
+
+                    <TextView
+                        android:paddingLeft="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/textColorVice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/opening_bank" />
+
+                    <View
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/f0"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+                    <EditText
+                        android:background="@color/transparent"
+                        android:layout_gravity="center_vertical"
+                        android:padding="2dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/textColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/hint_opening_bank"
+                        android:text="@={viewModel.request.openingBank}" />
+
+                </LinearLayout>
+
+                <View
+                    android:visibility="@{viewModel.openingBankVisibility}"
+                    android:background="@color/f0"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <LinearLayout
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        binding:srcCompat="@mipmap/account_name" />
+
+                    <TextView
+                        android:paddingLeft="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/textColorVice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/account_name" />
+
+                    <View
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/f0"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+                    <EditText
+                        android:background="@color/transparent"
+                        android:layout_gravity="center_vertical"
+                        android:padding="2dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/textColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/hint_account_name"
+                        android:text="@={viewModel.request.accountName}" />
+
+                </LinearLayout>
+
+                <View
+                    android:background="@color/f0"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <LinearLayout
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        binding:srcCompat="@mipmap/account_no" />
+
+                    <TextView
+                        android:paddingLeft="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/textColorVice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/account_no" />
+
+                    <View
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/f0"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+                    <EditText
+                        android:background="@color/transparent"
+                        android:layout_gravity="center_vertical"
+                        android:padding="2dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/textColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/hint_account_no"
+                        android:text="@={viewModel.request.accountNo}" />
+
+                </LinearLayout>
+
+                <View
+                    android:background="@color/f0"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"/>
+
+                <LinearLayout
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        binding:srcCompat="@mipmap/payment_received" />
+
+                    <TextView
+                        android:paddingLeft="8dp"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:textColor="@color/textColorVice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/for_payment" />
+
+                    <Switch
+                        android:id="@+id/for_payment"
+                        binding:onCheckedChangeCommand="@{viewModel.forPaymentCheckedChangeCommand}"
+                        android:layout_gravity="right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <View
+                    android:background="@color/f0"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+                <LinearLayout
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        binding:srcCompat="@mipmap/payment_received" />
+
+                    <TextView
+                        android:paddingLeft="8dp"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:textColor="@color/textColorVice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/for_receiving" />
+
+                    <Switch
+                        android:id="@+id/for_receiving"
+                        binding:onCheckedChangeCommand="@{viewModel.forReceivingCheckedChangeCommand}"
+                        android:layout_gravity="right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <View
+                    android:background="@color/f0"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+
+
+
+
+                <LinearLayout
+                    android:padding="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        binding:onClickCommand="@{viewModel.confirmClickCommand}"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:background="@drawable/color_primary_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/confirm" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+
+
+
+
+
+</layout>

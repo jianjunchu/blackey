@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="org.blackey.ui.mine.MineViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/layout_mine_toolbar"
+            binding:toolbarViewModel="@{viewModel}" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:background="?android:attr/selectableItemBackground"
+                    binding:onClickCommand="@{viewModel.shareOnClick}"
+                    android:gravity="center_vertical"
+                    android:padding="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/icon_invitation" />
+
+
+                    <TextView
+                        android:paddingLeft="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_weight="1"
+                        android:text="@string/invite_friends" />
+
+
+                    <TextView
+                        android:textColor="@color/custom_progress_red_progress"
+                        android:paddingRight="8dp"
+                        android:textSize="12sp"
+                        android:gravity="right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/hint_invite_friends" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/arrows_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@color/f0"/>
+
+                <LinearLayout
+                    android:background="?android:attr/selectableItemBackground"
+                    binding:onClickCommand="@{viewModel.myAdOnClick}"
+                    android:gravity="center_vertical"
+                    android:padding="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/advertising" />
+
+                    <TextView
+                        android:paddingLeft="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_weight="1"
+                        android:text="@string/advertising" />
+
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/arrows_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_marginLeft="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/f0"/>
+
+                <LinearLayout
+                    android:background="?android:attr/selectableItemBackground"
+                    binding:onClickCommand="@{viewModel.myOrdersOnClick}"
+                    android:gravity="center_vertical"
+                    android:padding="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/icon_my_orders" />
+
+                    <TextView
+                        android:paddingLeft="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_weight="1"
+                        android:text="@string/my_orders" />
+
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/arrows_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_marginLeft="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/f0"/>
+                <LinearLayout
+                    android:background="?android:attr/selectableItemBackground"
+                    binding:onClickCommand="@{viewModel.myAccountOnClick}"
+                    android:gravity="center_vertical"
+                    android:padding="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/icon_my_account" />
+
+                    <TextView
+                        android:paddingLeft="14sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_weight="1"
+                        android:text="@string/my_account" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/arrows_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_marginLeft="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/f0"/>
+                <LinearLayout
+                    android:background="?android:attr/selectableItemBackground"
+                    binding:onClickCommand="@{viewModel.resetNfcPasswordOnClick}"
+                    android:gravity="center_vertical"
+                    android:padding="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/icon_my_km" />
+
+                    <TextView
+                        android:paddingLeft="14sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_weight="1"
+                        android:text="@string/reset_nfc_password" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/arrows_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@color/f0"/>
+
+                <LinearLayout
+                    android:background="?android:attr/selectableItemBackground"
+                    binding:onClickCommand="@{viewModel.certificationOnClick}"
+                    android:gravity="center_vertical"
+                    android:padding="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/icon_kyc" />
+
+                    <TextView
+                        android:paddingLeft="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_weight="1"
+                        android:text="@string/certification" />
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/arrows_right" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_marginLeft="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/f0"/>
+
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:background="?android:attr/selectableItemBackground"
+                    binding:onClickCommand="@{viewModel.securityCenterOnClick}"
+                    android:gravity="center_vertical"
+                    android:padding="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/icon_security_center" />
+
+                    <TextView
+                        android:paddingLeft="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_weight="1"
+                        android:text="@string/security_center" />
+
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/arrows_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_marginLeft="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/f0"/>
+
+                <LinearLayout
+                    android:background="?android:attr/selectableItemBackground"
+                    binding:onClickCommand="@{viewModel.helpOnClick}"
+                    android:gravity="center_vertical"
+                    android:padding="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/ic_help" />
+
+                    <TextView
+                        android:paddingLeft="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_weight="1"
+                        android:text="@string/help_center" />
+
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/arrows_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_marginLeft="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/f0"/>
+
+                <LinearLayout
+                    android:background="?android:attr/selectableItemBackground"
+                    binding:onClickCommand="@{viewModel.aboutOnClick}"
+                    android:gravity="center_vertical"
+                    android:padding="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/ic_help" />
+
+                    <TextView
+                        android:paddingLeft="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_weight="1"
+                        android:text="@string/about_us" />
+
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/arrows_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_marginLeft="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/f0"/>
+
+                <LinearLayout
+                    android:background="?android:attr/selectableItemBackground"
+                    binding:onClickCommand="@{viewModel.settingOnClick}"
+                    android:gravity="center_vertical"
+                    android:padding="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/icon_setting" />
+
+                    <TextView
+                        android:paddingLeft="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_weight="1"
+                        android:text="@string/setting" />
+
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        binding:srcCompat="@mipmap/arrows_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/f0"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+
+
+    </LinearLayout>
+</layout>

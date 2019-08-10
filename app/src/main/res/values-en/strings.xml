@@ -1,0 +1,604 @@
+<resources>
+    <string name="app_name">Blackey</string>
+    <string name="bottom_return">Back</string>
+
+    <string name="bottom_restart">Submit Again</string>
+
+    <string name="bottom_tab_market">Trade</string>
+    <string name="bottom_tab_orders">Order</string>
+    <string name="bottom_tab_wallet">Wallet</string>
+    <string name="bottom_tab_mine">Mine</string>
+
+    <string name="title_market">Buy Monero</string>
+    <string name="title_wallet">My Wallets</string>
+    <string name="title_search">Search</string>
+    <string name="publish">Publish</string>
+    <string name="trust">Trusted Traders</string>
+    <string name="advertising">Advertisments</string>
+    <string name="register">Sign Up</string>
+    <string name="hint_login_mobile">Please input cell phone No.</string>
+    <string name="hint_login_password">Please input password</string>
+    <string name="country">Country/Region</string>
+    <string name="hint_country">Please choose country/region</string>
+    <string name="mobile_register">Regist Cell Phone</string>
+    <string name="hint_set_login_password">Please input password</string>
+    <string name="hint_login_captcha">Please input SMS code</string>
+    <string name="get_captcha">Get SMS code</string>
+    <string name="read_agree">Agree</string>
+    <string name="terms_service">《51XMR Terms of Service》</string>
+    <string name="next_step">Next</string>
+    <string name="hint_set_new_password">Please input new password(6-16 digitals or character)</string>
+    <string name="hint_confirm_password">Please input new password again</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="invalid_username_password">user name or password is not correct！</string>
+    <string name="choose_country">Choose country/region</string>
+    <string name="phone_number_is_exist">The cell phone has been registered</string>
+    <string name="loading">Loading, Please Wait...</string>
+    <string name="hint_read_terms_service">You must agree to the terms of service to continue</string>
+    <string name="registered_successfully">Sign up successfully</string>
+
+
+    <string name="LoadMoreView_loadingHint">Loading...</string>
+    <string name="LoadMoreView_completeHint">More</string>
+    <string name="LoadMoreView_errorHint">Load failed，Click to reload.</string>
+    <string name="LoadMoreView_noMoreHint">no more~</string>
+    <string name="buy">Buy</string>
+    <string name="deal">Trade</string>
+    <string name="good_reputation">Like</string>
+    <string name="quota">Limit</string>
+
+    <string name="processing">Processing</string>
+    <string name="finished">Finished</string>
+
+    <string name="order_status_unpaid">Wait for payment</string>
+    <string name="order_status_prepaid">Wait for confirm</string>
+    <string name="order_status_complete">Finished</string>
+    <string name="order_status_cancel">Canceled</string>
+    <string name="order_status_timeout">Timeout</string>
+
+    <string name="order_type_sell">Sell</string>
+    <string name="order_type_buy">Buy</string>
+    <string name="transaction_amount">Amount</string>
+    <string name="number_transaction">Quantity</string>
+    <string name="transaction_value">Price</string>
+    <string name="order_no">Order NO.</string>
+    <string name="invite_friends">Invite friends</string>
+    <string name="hint_invite_friends">Invite frieds</string>
+    <string name="certification">Real-name authentication</string>
+    <string name="security_center">Security</string>
+    <string name="help_center">Help Center</string>
+    <string name="about_us">About</string>
+    <string name="setting">Setting</string>
+    <string name="my_orders">My orders</string>
+    <string name="my_account">My Account</string>
+    <string name="certification_result">Authentication Result</string>
+    <string name="notification_setting">Notification Setting</string>
+    <string name="order_notification">Order Notification</string>
+    <string name="chat_notification">Chat Notification</string>
+    <string name="language">Voice</string>
+    <string name="simplified_chinese">简体中文</string>
+    <string name="logout">Logout</string>
+    <string name="hint_certification">After Real-name authentication，You can get more trade amount.</string>
+    <string name="hint_select_document_type">Choose Authentication Type</string>
+    <string name="start_certification">Start Authentication</string>
+    <string name="identity_card">ID card</string>
+    <string name="passport">Passport</string>
+    <string name="driving_licence">Driver License</string>
+    <string name="have_new_version">A new version is avaliable</string>
+    <string name="i_sell">My sold</string>
+    <string name="i_buy">My bought</string>
+    <string name="hint_form_market">It will spend %1$s XMR for publish/revoke.\n* It will spend %2$s of the trade amount for every trade.</string>
+    <string name="currency_type">Currency</string>
+    <string name="hint_premium">Premium Setting</string>
+    <string name="premium">Premium</string>
+    <string name="trading_value">Sell Price</string>
+    <string name="totalsold">Sell Quantity</string>
+    <string name="minimum">Minimum Order Quantity</string>
+    <string name="payment_term">Payment Method</string>
+    <string name="hint_payment_term">Please choose an account to pay</string>
+    <string name="collection_term">Collection Account</string>
+    <string name="hint_collection_term">Please choose an account to collect payment</string>
+    <string name="market_explain">Please leave a message with the advertisement. So the buyer can check first.</string>
+    <string name="anytime">Any time</string>
+    <string name="custom">Customized</string>
+    <string name="every_sunday">Sunday</string>
+    <string name="every_monday">Monday</string>
+    <string name="every_tuesday">Tuesday</string>
+    <string name="every_wednesday">Wednesday</string>
+    <string name="every_thursday">Thursday</string>
+    <string name="every_friday">Friday</string>
+    <string name="every_saturday">Saturday</string>
+    <string name="underway">Processing</string>
+    <string name="sold_out">Removed</string>
+    <string name="my_ads">My Advertisements</string>
+    <string name="mein_vertrauen">My trusted</string>
+    <string name="trust_me">Who Trust me</string>
+    <string name="confirm">Confirm</string>
+    <string name="create_new_wallet">New Wallet</string>
+    <string name="restore_wallet">Restore from NFC card</string>
+    <string name="hint_wallet_name">Wallet Name</string>
+    <string name="hint_wallet_passwd">Wallet Password</string>
+
+    <string name="message_strorage_not_writable">External Storage is not writable!</string>
+    <string name="no_write_external_storage">Please open the External Storage permissions</string>
+
+    <string name="message_strorage_not_permitted">We really need those External Storage permissions!</string>
+    <string name="message_camera_not_permitted">Camera is not permitted, cannot scan the QR code!</string>
+
+
+    <string name="progress_nfc_write">Writing Tag</string>
+    <string name="nfc_write_failed">Writing Tag failed!</string>
+    <string name="nfc_write_successful">Writing Tag successful</string>
+    <string name="nfc_tag_unsupported">Tag does not support NDEF!</string>
+    <string name="nfc_tag_size">Tag provides %1$d bytes, but we need %2$d!</string>
+    <string name="nfc_tag_read_undef">I don\'t understand the Tag!</string>
+    <string name="nfc_tag_read_what">I don\'t know what you want!</string>
+    <string name="nfc_tag_read_success">Reading Tag successful</string>
+    <string name="nfc_tag_tap">NFC Available!</string>
+
+    <string name="service_description">Service</string>
+    <string name="account_type">Account Type</string>
+    <string name="bank_name">Bank Name</string>
+    <string name="opening_bank">Branch</string>
+    <string name="account_name">Account Name</string>
+    <string name="account_no">Account NO.</string>
+    <string name="for_payment">Used for payment</string>
+    <string name="for_receiving">Used for collection</string>
+    <string name="hint_account_information">Input account information</string>
+    <string name="hint_opening_bank">Input branch name</string>
+    <string name="hint_account_name">Input account name(Optional)</string>
+    <string name="hint_account_no">Input account NO.</string>
+    <string name="hint_bank_name">Please choose bank</string>
+    <string name="choose_bank">Choose bank</string>
+    <string name="hint_account_type">Please choose account type</string>
+    <string name="add_account">Add Account</string>
+    <string name="error_invalid_username">user name or password is not correct</string>
+    <string name="register_or_login">Register/Login</string>
+    <string name="login_prompt">Login to check more.</string>
+    <string name="captcha_error">captcha is not correct</string>
+    <string name="send_captcha_success">send SMS code successfully</string>
+    <string name="number_trades">Trade %1$s | good comments：%2$s</string>
+    <string name="logout_success">You have been logout</string>
+    <string name="unauthorized">Operation is not permitted,not login or login is invalid</string>
+    <string name="forbidden">Request has been rejected</string>
+    <string name="not_found">Requested resource is not exist!</string>
+    <string name="request_timeout">Request Timeout!</string>
+    <string name="internal_server_error">Server internal error!</string>
+    <string name="service_unavailable">Server is not avaliable!</string>
+    <string name="http_error_default">Network Error!</string>
+    <string name="parse_error">Parse Error!</string>
+    <string name="netword_error">network connection error</string>
+    <string name="ssl_error">SSl Error!</string>
+    <string name="timeout_error">Connection time out</string>
+    <string name="error_unknown">Unknow error</string>
+    <string name="choose_currency">Choose Market</string>
+    <string name="buy_xmr">Buy XMR</string>
+    <string name="contact">Contact Seller</string>
+    <string name="unit_price">Price</string>
+    <string name="seller_message">Seller Message:</string>
+    <string name="how_much_to_buy">How much do you want to buy?</string>
+    <string name="hint_purchase_amount">Please input the amount you want to buy</string>
+    <string name="hint_purchase_quantity">Please input the quantity you want to buy</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="trading_remind">Trade Notice:</string>
+    <string name="hint_trading_remind">1.Check a seller\'s credits before a trade\n2.Please chat within the App. And save the chat records\nFor any dispute during trade,Please contact "Help" to resolve</string>
+    <string name="help">Help</string>
+    <string name="order_confirm">Order Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="buying_price">Buy Price</string>
+    <string name="purchase_quantity">Buy Quantity</string>
+    <string name="payment_amount">Total Amount</string>
+    <string name="order_confirm_warn">Notice: The orderd Monero has been locked in the platform, Please be assured the purchase.</string>
+
+    <string name="label_wallet_advanced_details">Click to get more information</string>
+
+
+
+    <string name="receive_desc_hint">Description (optional)</string>
+
+    <string name="progress_ledger_progress">Communicating with Ledger</string>
+    <string name="progress_ledger_confirm">Confirmation on Ledger required!</string>
+    <string name="progress_ledger_lookahead">Retrieving subaddresses</string>
+    <string name="progress_ledger_verify">Verifying keys</string>
+    <string name="progress_ledger_opentx">Doing crazy maths</string>
+    <string name="progress_ledger_mlsag">Hashing stuff</string>
+
+
+    <string name="changepw_progress">Change password is in progress!</string>
+
+    <string name="backup_success">Backup successfuly</string>
+    <string name="backup_failed">Backup failed!</string>
+    <string name="archive_failed">Archive failed!</string>
+    <string name="rename_failed">Rename failed!</string>
+    <string name="changepw_failed">Change password failed!</string>
+    <string name="changepw_success">Change password successfuly</string>
+
+
+    <string name="generate_password_hint">Wallet Passphrase</string>
+    <string name="generate_fingerprint_hint">Allow to open wallet using fingerprint</string>
+    <string name="generate_fingerprint_warn"><![CDATA[
+    <strong>Fingerprint Authentication</strong>
+    <p>With fingerprint authentication enabled, you can view wallet balance and receive funds
+    without entering password.</p>
+    <p>But for additional security, monerujo will still require you to enter password when
+    viewing wallet details or sending funds.</p>
+    <strong>Security Warning</strong>
+    <p>Finally, monerujo wants to remind you that anyone who can get your fingerprint will be
+    able to peep into your wallet balance.</p>
+    <p>For instance, a malicious user around you can open your wallet when you are asleep.</p>
+    <strong>Are you sure to enable this function?</strong>
+]]></string>
+
+    <string name="generate_mnemonic_hint">25-Word Mnemonic Seed</string>
+    <string name="generate_restoreheight_hint">Restore Height or Date (YYYY-MM-DD)</string>
+
+    <string name="generate_bad_passwordB">Passphrases do not match</string>
+    <string name="generate_empty_passwordB">Passphrase may not be empty</string>
+    <string name="generate_wallet_name">Give me a name!</string>
+    <string name="generate_wallet_exists">Wallet exists!</string>
+    <string name="generate_wallet_dot">Cannot begin with .</string>
+    <string name="generate_address_label">Public Address</string>
+    <string name="generate_mnemonic_label">Mnemonic Seed</string>
+    <string name="generate_crazypass_label">Wallet Files Restore Password</string>
+    <string name="generate_button_accept">I have noted the mnemonic seed</string>
+    <string name="generate_viewkey_label">View Key</string>
+    <string name="generate_spendkey_label">Spend Key</string>
+    <string name="generate_address_label_sub">Public Subaddress #%1$d</string>
+    <string name="generate_wallet_creating">Creating wallet</string>
+    <string name="generate_wallet_type_new">New</string>
+    <string name="generate_wallet_type_seed">Seed</string>
+
+
+    <string name="label_copy_viewkey">View Key</string>
+    <string name="label_copy_address">Public Address</string>
+    <string name="label_copy_xmrtokey">XMR.TO Key</string>
+    <string name="message_copy_viewkey">View Key copied to clipboard!</string>
+    <string name="message_copy_xmrtokey">XMR.TO Key copied to clipboard!</string>
+    <string name="message_copy_address">Wallet Address copied to clipboard!</string>
+    <string name="message_copy_txid">Transaction ID copied to clipboard!</string>
+    <string name="message_nocopy">Copy disabled for security reasons!</string>
+
+    <string name="message_exchange_failed">Cannot get exchange rate!\nUse XMR/XMR or try again</string>
+
+
+
+    <string name="menu_info">Show Secrets!</string>
+    <string name="menu_streetmode">Street Mode</string>
+    <string name="menu_receive">Receive</string>
+    <string name="menu_rename">Rename &#8230;</string>
+    <string name="menu_archive">Archive</string>
+
+    <string name="bad_fingerprint">Fingerprint not recognized. Try again.</string>
+    <string name="bad_password">Incorrect password!</string>
+    <string name="bad_saved_password">Saved password is incorrect.\nPlease enter password manually.</string>
+    <string name="bad_wallet">Wallet does not exist!</string>
+    <string name="label_ok">OK</string>
+    <string name="label_cancel">Cancel</string>
+    <string name="label_close">Close</string>
+
+    <string name="details_alert_message">Sensitive data will now be shown.\nLook over your shoulder!</string>
+    <string name="details_alert_yes">I\'m safe</string>
+    <string name="details_alert_no">Take me back!</string>
+    <string name="details_title">Details</string>
+
+    <string name="prompt_rename">Rename %1$s</string>
+
+    <string name="prompt_changepw">New Passphrase for %1$s</string>
+    <string name="prompt_changepwB">Repeat Passphrase for %1$s</string>
+    <string name="prompt_password">Password for %1$s</string>
+    <string name="prompt_fingerprint_auth">You can also open wallet using fingerprint.\nPlease touch sensor.</string>
+    <string name="prompt_send_password">Confirm Password</string>
+    <string name="prompt_open_wallet">Opening the wallet&#8230;</string>
+
+    <string name="service_busy">I am still busy with your last wallet &#8230;</string>
+    <string name="label_receive_info_gen_qr_code">Trykk for QR kode</string>
+
+    <string name="receive_paymentid_hint">Betalings-ID (valgfritt)</string>
+    <string name="receive_amount_hint">Amount</string>
+    <string name="receive_cannot_open">Kunne ikke åpne lommebok!</string>
+    <string name="receive_paymentid_invalid">16 eller 64 heks-karakterer (0&#8211;9,a&#8211;f)</string>
+    <string name="receive_integrated_paymentid_invalid">Må være tom med integrert adresse</string>
+
+
+    <string name="receive_amount_too_big">Maks. %1$s</string>
+    <string name="receive_amount_negative">Min. 0</string>
+    <string name="receive_amount_nan">XMR ikke et tall</string>
+    <string name="opening_hours">开放时间</string>
+    <string name="wallet_activity_name">Wallet</string>
+    <string name="status_wallet_disconnected">Disconnected</string>
+
+    <string name="label_wallet_receive">Receive</string>
+    <string name="label_wallet_send">Give</string>
+    <string name="open_progress">Checking daemon connection</string>
+
+
+    <string name="status_wallet_loading">Loading Wallet &#8230;</string>
+    <string name="status_wallet_unloaded">Wallet saved</string>
+    <string name="status_wallet_unload_failed">Wallet save failed!</string>
+    <string name="status_wallet_connecting">Connecting &#8230;</string>
+    <string name="status_wallet_connect_failed">Node connection failed!\nCheck username/password</string>
+    <string name="status_wallet_connect_timeout">Node connection timed out!\nTry again or another.</string>
+    <string name="status_wallet_node_invalid">Node invalid!\nTry another.</string>
+    <string name="status_wallet_connect_ioex">Cannot reach node!\nTry again or another.</string>
+    <string name="status_wallet_connect_wrongversion">Node version incompatible - please upgrade!</string>
+
+    <string name="xmr_unconfirmed_amount">+ %1$s XMR sin confirmar</string>
+
+    <string name="status_synced">Height:</string>
+    <string name="status_remaining">Remaining Blocks</string>
+    <string name="status_syncing">Sync...:</string>
+
+    <string name="xmrto_error_001">XMR.TO offline - try again later</string>
+    <string name="xmrto_error_004">BTC amount out of bounds</string>
+    <string name="xmrto_error_010">Invalid or outdated Payment URL</string>
+    <string name="xmrto_error_012">Too many requests</string>
+    <string name="xmrto_error" translatable="false">XMR.TO Service Error</string>
+
+    <string name="open_wallet_ledger_missing">Please (re)connect Ledger device</string>
+
+    <string name="accounts_balance" translatable="false">%1$s XMR</string>
+
+    <string name="label_watchonly">(Read only)</string>
+    <string name="label_send_success">Successfully sent</string>
+    <string name="label_send_done">Done</string>
+    <string name="label_send_progress_queryparms">正在查询 XMR.TO 参数</string>
+
+    <string name="label_generic_xmrto_error">XMR.TO 发生错误</string>
+    <string name="text_generic_xmrto_error">Error Code: %1$d</string>
+
+    <string name="text_retry">Retry</string>
+    <string name="text_noretry_monero">我们卡住了!</string>
+    <string name="text_noretry">不好, XMR.TO 现在似乎无法提供服务!</string>
+    <string name="text_select">Select</string>
+
+    <string name="tx_account">Account #</string>
+    <string name="tx_timestamp">Timestamp</string>
+    <string name="tx_id">TX ID</string>
+    <string name="tx_key">TX Key</string>
+    <string name="tx_destination">Destination</string>
+    <string name="tx_destination_btc">Destination\n(BTC)</string>
+    <string name="tx_paymentId">Payment ID</string>
+    <string name="tx_blockheight">Block</string>
+    <string name="tx_amount">Amount</string>
+    <string name="tx_amount_btc">Amount\n(BTC)</string>
+    <string name="tx_fee">Fee</string>
+    <string name="tx_transfers">Transfers</string>
+    <string name="tx_notes">Notes</string>
+    <string name="tx_notes_hint">(optional)</string>
+    <string name="tx_button_notes">Save</string>
+    <string name="tx_notes_set_failed">Notes saved failed</string>
+    <string name="tx_title">Transaction Details</string>
+    <string name="tx_subaddress">Subaddress #%1$d</string>
+    <string name="tx_list_failed_text">failed</string>
+    <string name="tx_account_formatted" translatable="false">(%1$d, %2$d)</string>
+    <string name="tx_pending">PENDING</string>
+    <string name="tx_failed">FAILED</string>
+
+    <string name="tx_list_fee">- Fee %1$s</string>
+    <string name="tx_list_amount_failed">(%1$s)</string>
+    <string name="tx_list_amount_negative">- %1$s</string>
+    <string name="tx_list_amount_positive">+ %1$s</string>
+
+    <string name="send_amount_btc_xmr">%1$s (Reference)</string>
+
+    <string name="send_paymentid_hint">Payment ID(Optional)</string>
+    <string name="send_amount_hint">0.00</string>
+    <string name="send_notes_hint">Notes (Optional)</string>
+    <string name="send_generate_paymentid_hint">Generate</string>
+    <string name="send_send_label">Send Monero</string>
+    <string name="send_send_timed_label">Send Monero (%1$s)</string>
+    <string name="send_qr_invalid">QR is invalid</string>
+    <string name="send_qr_address_invalid">The QR code is invallid</string>
+    <string name="send_address_invalid">Address is invalid</string>
+    <string name="send_title">Send</string>
+    <string name="send_available">Balance: %1$s XMR</string>
+    <string name="send_address_title">Address</string>
+    <string name="send_amount_title">Amount</string>
+    <string name="send_confirm_title">Confirm</string>
+    <string name="send_success_title">Finished</string>
+
+    <string name="send_amount_label">Amount</string>
+    <string name="send_fee_btc_label">Fee (XMR)</string>
+    <string name="send_fee_label">Fee</string>
+    <string name="send_total_btc_label">Total (XMR)</string>
+    <string name="send_total_label">Total</string>
+
+    <string name="send_amount">%1$s XMR</string>
+    <string name="send_fee">+%1$s Fee</string>
+
+    <string name="send_create_tx_error_title">Error occurred when create a transaction</string>
+
+    <string name="send_address_not_openalias">OpenAlias address not available</string>
+    <string name="send_address_openalias">OpenAlias secure &#x2714;</string>
+    <string name="send_address_resolve_openalias">Resolving OpenAlias&#8230;</string>
+    <string name="send_address_no_dnssec">OpenAlias without DNSSEC - address may be spoofed</string>
+
+    <string name="send_address_resolve_bip70">Resolving Payment URI&#8230;</string>
+    <string name="send_address_not_bip70">Could not resolve Payment URI</string>
+    <string name="send_address_bip70">Resolved Payment URI &#x2714;</string>
+    <string name="send_address_hint">Receiver</string>
+
+    <string name="send_sweepall">All confirmed transactions to the address！</string>
+    <string name="send_qr_hint" translatable="false">Scan</string>
+    <string name="send_available_btc">Balance： %2$s BTC (%1$s XMR)</string>
+    <string name="send_xmrto_timeout">Wait timeout!</string>
+
+
+    <string name="info_paymentid_intergrated">已加入付款ID</string>
+    <string name="info_prepare_tx">正在准备你的交易</string>
+    <string name="info_send_xmrto_query">查询中 &#8230;</string>
+    <string name="info_send_xmrto_success_order_label">XMR.TO 订单</string>
+    <string name="info_xmrto"><![CDATA[
+        <b>你输入了Bitcoin地址</b><br/>
+        <i>你将会发送XMR而收款方将会收到BTC(由 <b>XMR.TO</b> 提供转換)</i>
+    ]]></string>
+
+    <string name="info_send_xmrto_parms"><![CDATA[
+        <b>你可发送 %1$s &#8212; %2$s BTC</b>.<br/>
+        <i><b>XMR.TO</b>提供的<u>即时</u>汇率为<b>%3$s BTC</b></i>.
+    ]]></string>
+    <string name="info_send_xmrto_zeroconf"><![CDATA[
+        <i>金额少于<b>%1$s BTC</b>，将可以<u>马上</u>发送!</i>
+    ]]></string>
+
+    <string name="text_send_btc_amount">%1$s BTC = %2$s XMR</string>
+    <string name="text_send_btc_rate">(Rate: %1$s BTC/XMR)</string>
+
+
+    <string name="status_transaction_failed">交易失败: %1$s</string>
+
+    <string name="unknown_amount" translatable="false">\?\?\?</string>
+
+
+    <string name="label_send_btc_xmrto_info">Visit xmr.to to get support and more information</string>
+    <string name="label_send_btc_xmrto_key_lb">Private Key\nXMR.TO</string>
+    <string name="label_send_btc_xmrto_key">XMR.TO Key</string>
+    <string name="label_send_btc_address">Destination BTC address</string>
+    <string name="label_send_btc_amount">Amount</string>
+
+
+    <string name="label_send_progress_xmrto_create">Create XMR.TO Order</string>
+    <string name="label_send_progress_xmrto_query">Query XMR.TO Order</string>
+    <string name="label_send_progress_create_tx">Prepare for Monero tx</string>
+
+    <string name="label_send_txid">Tx ID</string>
+    <string name="label_send_address">Send address</string>
+    <string name="label_send_payment_id">Payment ID</string>
+    <string name="label_send_notes">memo</string>
+
+    <string name="street_sweep_amount">EVERYTHING!</string>
+    <string name="hint_offer_order">The price at the position of %1$d</string>
+    <string name="hint_min_limit">Input minimum quantity per order</string>
+    <string name="hint_total_inventory">Input quantity to sell</string>
+    <string name="hint_unit_price">Input price</string>
+    <string name="hint_select_currency">Choose Currency</string>
+    <string name="choose_payment_mode">Choose collection account</string>
+    <string name="gross_amount">Total amount</string>
+    <string name="minimum_quantity">Minimum order amount</string>
+
+    <string name="sell_confirm">Sell confirmation</string>
+    <string name="minimum_amount">Minimum order amount</string>
+    <string name="sell_confirm_warn">Notice:Please confirm the quantity before publish,Monero will be transfered from your wallet to margin account</string>
+    <string name="select_wallet">Choose wallet</string>
+    <string name="error_select_time">End time must behind start time</string>
+    <string name="no_more_data">No more</string>
+    <string name="trading_limits">Trade limit</string>
+    <string name="gathering_wallet">Collecting account</string>
+
+
+    <string name="ordrt_seller">Seller</string>
+    <string name="order_contact_number">Contact number</string>
+    <string name="order_obligation">Order amount to pay</string>
+    <string name="order_commission_fee">Commission fee</string>
+    <string name="order_get_quantity">Quantity</string>
+    <string name="order_create_time">Order time</string>
+    <string name="cancel_order">Cancel</string>
+    <string name="order_info">Order details</string>
+    <string name="create_order_succeed">Ordered,Please contact seller and pay</string> <!-- as in: "everything in the account" = "all the money" -->
+    <string name="order_trading_remind">卖家已开启实名认证,请确保付款于实名一致.</string>
+    <string name="buy_order">Buy Orders(%1$s)</string>
+    <string name="sell_order">Sell Orders(%1$s)</string>
+
+    <string name="mark_payment">Marked as payed</string>
+    <string name="mark_receipt">Marked as collected</string>
+    <string name="upload_card_img">Please upload your ID card photo</string>
+
+
+    <string name="front_of_id_card">%1$sFront</string>
+    <string name="back_of_id_card">Hand hold%1$s</string>
+    <string name="photo_requirements">Photo requirements</string>
+    <string name="hint_first_name">Please input your first name</string>
+    <string name="hint_last_name">Please input your last name</string>
+    <string name="hint_birth_day">Please choose birthday</string>
+    <string name="id_card_standard">Standard</string>
+    <string name="id_card_lose">Missing border </string>
+    <string name="id_card_fuzzy">Picture bluring</string>
+    <string name="id_card_flicker">Strong flash</string>
+    <string name="no_permission_camera">Please allow camera in system settings</string>
+    <string name="hint_identity_number">Please ID card number</string>
+
+    <string name="passed_check_pending">Verify manually,Please wait</string>
+    <string name="passed_failed">Verify not passed,Please submit again</string>
+    <string name="passed_approve">Verify passed</string>
+    <string name="count_order">Order quantity</string>
+    <string name="action_sold_out">Sold out</string>
+    <string name="delete">Delete</string>
+    <string name="delete_confirmation">Delete Confirmation</string>
+    <string name="hint_delete_ad">Are you sure to revoke the AD?</string>
+    <string name="revocation_confirmation">Revoke confirmation</string>
+    <string name="hint_revocation_ad">suer to revoke the AD?</string>
+    <string name="real_name">Real name</string>
+    <string name="successfully_added">submit successfully</string>
+    <string name="edit">Edit</string>
+    <string name="hint_delete_account">Are you sure you want to delete the account?</string>
+    <string name="edit_account">Edit Account</string>
+    <string name="inventory">Inbentory</string>
+    <string name="list_minimum_buy_quantity">Amount: </string>
+    <string name="list_total_buy_quantity">Total Amount</string>
+    <string name="go_buy">Buy Now</string>
+    <string name="experience_immediately">Start Journey</string>
+    <string name="menu_backup_to_nfc">Backup to NFC Card</string>
+    <string name="menu_delete">Delete</string>
+    <string name="generate_check_mnemonic">Please input 25 word Seed</string>
+    <string name="restore_25_wallet">Restore from 25 word Seed</string>
+    <string name="input_nfc_password_title">Input PIN code,then swap card</string>
+    <string name="backup_seed">Backup 25 words Seed?</string>
+    <string name="advertise_create_success">Adv publish successfully,Please waite for 8 confirmations to show in the market!</string>
+    <string name="title_confirm_payment">Payment confirmation</string>
+    <string name="title_confirm_receipt">Received confirmation</string>
+    <string name="nfc_invalid">Read Data Failed</string>
+    <string name="backup_to_nfc_auth_failed">Card Authentication Failed</string>
+    <string name="backup_to_nfc_write_failed">Backup Failed,Please don\'t move the card while backup</string>
+    <string name="read_address_failed">Read Monero Address Failed</string>
+    <string name="read_key_failed">Read Monero Key Failed</string>
+    <string name="restore_from_nfc_auth_failed">The PIN is not correct</string>
+    <string name="reset_nfc_password">Change Card PIN</string>
+    <string name="hint_original_password">Input old PIN(8 digits)!</string>
+    <string name="hint_password">Input new PIN(8 digits)!!</string>
+    <string name="slot_nfc_card">Please put the card in the NFC zone of the cell phone, and don\'t move the card.</string>
+    <string name="hint_passwords_differ">The new PINs you typed do not match. Please type again.</string>
+    <string name="error_original_password">The old PIN is not correct!</string>
+    <string name="write_new_key_failed">Change PIN failed,Please don\'t move the card</string>
+    <string name="write_new_key_success">PIN changed successfully</string>
+    <string name="init_node_error">No valid remote node,Please try again later.</string>
+    <string name="archive_alert_message">The wallet will be backed up and then deleted!</string>
+    <string name="archive_alert_yes">Yes, do that!</string>
+    <string name="archive_alert_no">No thanks!</string>
+    <string name="total_quantity">Total Quantity</string>
+    <string name="minimum_order_quantity">Minimum Order Quantity</string>
+    <string name="help_address">Blk134, Jurong Gateway Road, #02-309A, Singapore 600134</string>
+    <string name="help_phone">+(65)86991798</string>
+    <string name="error_processing_previous">processing previous order,please wait.</string>
+    <string name="success">Successful operation</string>
+    <string name="title_confirm_cancel">make sure to cancel the order.</string>
+    <string name="order_buyer">Buyer</string>
+    <string name="message_copy_account_no">Account NO. has been copied to clipboard！</string>
+    <string name="message_copy_account_name">Account Name has been copied to clipboard！</string>
+    <string name="title_mind">Notice</string>
+    <string name="text_seller_mind">1. Please make a collection confirmation after you received %1$s. \n2. if you make a confirmation without receiving the order payment，the monero will be released to the buyer，you will take the responsibility of the possible lose.</string>
+    <string name="text_buyer_mind">1. Please transfer %1$s to the seller\'s account. \n2. Please transfer and confirm within 30 minutes。  \n3. If you transferred but don\'t make a confirmation within 30 minutes，the order will be canceled，you will take the responsibility of the possible lose.</string>
+    <string name="not_sufficient_funds">Insufficient balance</string>
+    <string name="amount_to_be_collected">Amount to be collected</string>
+    <string name="hint_complaint_content">请输入投诉的内容</string>
+    <string name="label_contact">联系方式</string>
+    <string name="label_captions">上传图片</string>
+    <string name="button_making_complaints">我要投诉</string>
+    <string name="title_complain">投诉</string>
+    <string name="submit">提交</string>
+    <string name="message_complain_success">提交投诉成功,我们的客服将会联系您!</string>
+    <string name="current_price" >Monero Current Price</string>
+    <string name="more">more</string>
+
+    <string-array name="currency" translatable="false">
+        <item>XMR</item>
+        <item>CNY</item>
+        <item>USD</item>
+        <item>SGD</item>
+        <item>JPY</item>
+        <item>IDR</item>
+        <item>KDW</item>
+        <item>MYR</item>
+        <item>PHP</item>
+        <item>HKD</item>
+    </string-array>
+</resources>

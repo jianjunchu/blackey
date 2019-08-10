@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="org.blackey.ui.market.MarketViewModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#fff"
+        android:orientation="vertical" >
+
+        <!--标题-->
+        <include
+            android:id="@+id/include"
+            layout="@layout/layout_market_toolbar"
+            binding:toolbarViewModel="@{viewModel}" />
+
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/include">
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/app_bar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:fitsSystemWindows="true"
+                binding:elevation="0dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    binding:layout_scrollFlags="scroll">
+
+                    <cn.bingoogolapple.bgabanner.BGABanner
+                        android:visibility="gone"
+                        android:id="@+id/banner_main_alpha"
+                        style="@style/BannerDefaultStyle"
+                        binding:banner_pointAutoPlayAble="false"
+                        binding:banner_indicatorGravity="bottom|right"
+                        binding:banner_transitionEffect="alpha" />
+
+                    
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:background="@color/f6"
+                        android:layout_gravity="bottom"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp">
+
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:textColor="@color/textColor"
+                            android:text="@string/current_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_marginTop="6dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+
+                            <Button
+                                android:background="@color/transparent"
+                                android:textStyle="bold"
+                                android:gravity="right"
+                                android:textSize="12sp"
+                                android:textColor="@color/textColor"
+                                android:layout_width="32dp"
+                                android:layout_height="16dp"
+                                android:text="USD:" />
+
+                            <TextView
+                                android:textStyle="bold"
+                                android:gravity="left"
+                                android:textSize="12sp"
+                                android:textColor="@color/textColor"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@={viewModel.usdText}" />
+
+                            <Button
+                                android:background="@color/transparent"
+                                android:textStyle="bold"
+                                android:gravity="right"
+                                android:textSize="12sp"
+                                android:textColor="@color/textColor"
+                                android:layout_width="32dp"
+                                android:layout_height="16dp"
+                                android:text="CNY:" />
+
+                            <TextView
+                                android:textStyle="bold"
+                                android:gravity="left"
+                                android:textSize="12sp"
+                                android:textColor="@color/textColor"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@={viewModel.cnyText}" />
+
+                            <Button
+                                android:background="@color/transparent"
+                                android:textStyle="bold"
+                                android:gravity="right"
+                                android:textSize="12sp"
+                                android:textColor="@color/textColor"
+                                android:layout_width="32dp"
+                                android:layout_height="16dp"
+                                android:text="EUR:" />
+
+                            <TextView
+                                android:textStyle="bold"
+                                android:gravity="left"
+                                android:textSize="12sp"
+                                android:textColor="@color/textColor"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@={viewModel.eurText}" />
+
+                            <Button
+                                android:background="@color/transparent"
+                                android:textStyle="bold"
+                                android:gravity="right"
+                                android:textSize="12sp"
+                                android:textColor="@color/textColor"
+                                android:layout_width="32dp"
+                                android:layout_height="16dp"
+                                android:text="GBP:" />
+
+                            <TextView
+                                android:textStyle="bold"
+                                android:gravity="left"
+                                android:textSize="12sp"
+                                android:textColor="@color/textColor"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@={viewModel.gbpText}" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:background="@color/transparent"
+                                android:textStyle="bold"
+                                android:gravity="right"
+                                android:textSize="13sp"
+                                android:textColor="@color/textColor"
+                                android:layout_width="32dp"
+                                android:layout_height="16dp"
+                                android:text="JPY:" />
+
+
+                            <TextView
+                                android:textStyle="bold"
+                                android:gravity="left"
+                                android:textSize="12sp"
+                                android:textColor="@color/textColor"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@={viewModel.jpyText}" />
+
+                            <Button
+                                android:background="@color/transparent"
+                                android:textStyle="bold"
+                                android:gravity="right"
+                                android:textSize="11sp"
+                                android:textColor="@color/textColor"
+                                android:layout_width="32dp"
+                                android:layout_height="16dp"
+                                android:text="KRW:" />
+
+                            <TextView
+                                android:textStyle="bold"
+                                android:gravity="left"
+                                android:textSize="12sp"
+                                android:textColor="@color/textColor"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@={viewModel.krwText}" />
+
+                            <Button
+                                android:background="@color/transparent"
+                                android:textStyle="bold"
+                                android:textSize="11sp"
+                                android:gravity="right"
+                                android:textColor="@color/textColor"
+                                android:layout_width="32dp"
+                                android:layout_height="16dp"
+                                android:text="AUD:" />
+
+                            <TextView
+                                android:textStyle="bold"
+                                android:gravity="left"
+                                android:textSize="12sp"
+                                android:textColor="@color/textColor"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@={viewModel.audText}" />
+
+                            <Button
+                                android:background="@color/transparent"
+                                android:textStyle="bold"
+                                android:gravity="right"
+                                android:textSize="12sp"
+                                android:textColor="@color/textColor"
+                                android:layout_width="32dp"
+                                android:layout_height="16dp"
+                                android:text="HKD:" />
+
+                            <TextView
+                                android:textStyle="bold"
+                                android:gravity="left"
+                                android:textSize="12sp"
+                                android:textColor="@color/textColor"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@={viewModel.hkdText}" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:background="@color/transparent"
+                                android:textStyle="bold"
+                                android:gravity="right"
+                                android:textSize="11sp"
+                                android:textColor="@color/textColor"
+                                android:layout_width="32dp"
+                                android:layout_height="16dp"
+                                android:text="TWD:" />
+
+                            <TextView
+                                android:textStyle="bold"
+                                android:gravity="left"
+                                android:textSize="12sp"
+                                android:textColor="@color/textColor"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@={viewModel.twdText}" />
+
+                            <Button
+                                android:background="@color/transparent"
+                                android:textStyle="bold"
+                                android:gravity="right"
+                                android:textSize="12sp"
+                                android:textColor="@color/textColor"
+                                android:layout_width="32dp"
+                                android:layout_height="16dp"
+                                android:text="SGD:" />
+
+                            <TextView
+                                android:textStyle="bold"
+                                android:gravity="left"
+                                android:textSize="12sp"
+                                android:textColor="@color/textColor"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@={viewModel.sgdText}" />
+
+                            <Button
+                                android:background="@color/transparent"
+                                android:textStyle="bold"
+                                android:textSize="13sp"
+                                android:gravity="right"
+                                android:textColor="@color/textColor"
+                                android:layout_width="32dp"
+                                android:layout_height="16dp"
+                                android:text="IDR:" />
+
+                            <TextView
+                                android:textStyle="bold"
+                                android:gravity="left"
+                                android:textSize="12sp"
+                                android:textColor="@color/textColor"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@={viewModel.idrText}" />
+
+                            <Button
+                                android:background="@color/transparent"
+                                android:textStyle="bold"
+                                android:gravity="right"
+                                android:textSize="11sp"
+                                android:textColor="@color/textColor"
+                                android:layout_width="32dp"
+                                android:layout_height="16dp"
+                                android:text="MYR:" />
+
+                            <TextView
+                                android:textStyle="bold"
+                                android:gravity="left"
+                                android:textSize="12sp"
+                                android:textColor="@color/textColor"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@={viewModel.myrText}" />
+
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            binding:onClickCommand="@{viewModel.moreClickCommand}"
+                            android:gravity="right"
+                            android:id="@+id/tv_more"
+                            android:textColor="@color/colorPrimary"
+                            android:text="@string/more"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+
+                </FrameLayout>
+
+                <View
+                    android:background="@color/f0"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <android.support.design.widget.TabLayout
+                    xmlns:binding="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    binding:tabIndicatorColor="@color/colorPrimary"
+                    binding:tabMode="fixed"
+                    binding:tabTextAppearance="@style/TextAppearance.Design.Tab.Custom"
+                    binding:tabSelectedTextColor="@color/colorPrimary"
+                    binding:tabTextColor="@android:color/black" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#25979797" />
+
+            </android.support.design.widget.AppBarLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                binding:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never" />
+            </RelativeLayout>
+
+
+        </android.support.design.widget.CoordinatorLayout>
+
+    </RelativeLayout>
+
+
+</layout>

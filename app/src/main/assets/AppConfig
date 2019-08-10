@@ -1,0 +1,5 @@
+ServerUrl=http://localhost/blackey/
+DefaultNodeHost=localhost
+DefaultNodeUsername=admin
+DefaultNodePassword=123456
+DefaultNodePort=98081
